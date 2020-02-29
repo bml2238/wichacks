@@ -1,9 +1,10 @@
 package game;
 
+
 /**
  * Player class, with all stats and methods to edit stats
  */
-public class Player implements PlayerEffects {
+public class Player{
 
     /** player variables */
     private String name;
@@ -31,6 +32,13 @@ public class Player implements PlayerEffects {
         this.selfEsteem = 50;
     }
 
+    /** getters */
+    public int getSelfEsteem() { return this.selfEsteem; }
+    public int getReputation () { return this.reputation; }
+    public double getIncome() { return this.income; }
+    public double getMoney() { return this.money; }
+    public double getAge() { return this.age; )}
+
     /** changes self esteem +/- amount */
     private void changeSelfEsteem(int amount) { this.selfEsteem += amount; }
 
@@ -42,11 +50,15 @@ public class Player implements PlayerEffects {
 
     public void purchase(Item item) {
         this.reputation += item.repEffect;
+        this.selfEsteem += item.selfEffect;
+
     }
 
     public boolean isConfidentEnough(int level) {
-        return (reputation > level);
+        return reputation > level;
     }
+
+
 
 
 }
