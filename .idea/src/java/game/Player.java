@@ -37,7 +37,7 @@ public class Player{
     public int getReputation () { return this.reputation; }
     public double getIncome() { return this.income; }
     public double getMoney() { return this.money; }
-    public double getAge() { return this.age; )}
+    public double getAge() { return this.age; }
 
     /** changes self esteem +/- amount */
     private void changeSelfEsteem(int amount) { this.selfEsteem += amount; }
