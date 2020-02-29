@@ -23,5 +23,7 @@ public class tests {
 
         boolean purchase = scan.nextBoolean();
 
+        woman.purchaseClothing(shirt);
+
     }
 }
