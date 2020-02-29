@@ -1,4 +1,4 @@
-package game;
+package mechanics;
 
 /**
  * Player class, with all stats and methods to edit stats
@@ -10,7 +10,7 @@ public class Player{
     private int selfEsteem; //0-100
     private double income;
     private double age;
-    private int reputation; //0-100
+    private int respect; //0-100
     private double money;
     private Business business;
 
@@ -28,7 +28,7 @@ public class Player{
         this.income = 0;
         this.money = 10000;
         this.age = 21;
-        this.reputation = 50;
+        this.respect = 50;
         this.selfEsteem = 50;
     }
 
@@ -37,13 +37,13 @@ public class Player{
         this.income = income;
         this.money = money;
         this.age = 21;
-        this.reputation = 50;
+        this.respect = 50;
         this.selfEsteem = 50;
     }
 
     /** getters */
     public int getSelfEsteem() { return this.selfEsteem; }
-    public int getReputation () { return this.reputation; }
+    public int getRespect() { return this.respect; }
     public double getIncome() { return this.income; }
     public double getMoney() { return this.money; }
     public double getAge() { return this.age; }
@@ -53,17 +53,33 @@ public class Player{
     public void changeSelfEsteem(int amount) { this.selfEsteem += amount; }
 
     /** changes reputation +/- amount */
+<<<<<<< HEAD:src/java/game/Player.java
     public void changeReputation(int amount) { this.reputation += amount; }
 
     public void changeMoney(int amount) {
         this.money += amount;
     }
+=======
+    private void changeReputation(int amount) { this.respect += amount; }
+>>>>>>> fe02542140a08d27584138cf03776cc10422d3b1:src/java/mechanics/Player.java
 
     /** raises/lowers player income by percent */
     public void raise(double percent) { this.income *= percent; }
 
+<<<<<<< HEAD:src/java/game/Player.java
+=======
+    public void purchaseClothing(Item item) {
+        if(this.isConfidentEnough(item.repEffect))
+            this.respect += item.repEffect;
+        else
+            this.respect -= item.repEffect;
+        this.selfEsteem += item.selfEffect;
+        this.money -= item.price;
+    }
+
+>>>>>>> fe02542140a08d27584138cf03776cc10422d3b1:src/java/mechanics/Player.java
     public boolean isConfidentEnough(int level) {
-        return reputation > level;
+        return respect > level;
     }
 
 }

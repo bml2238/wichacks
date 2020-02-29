@@ -1,6 +1,4 @@
-package game;
-import java.util.HashMap;
-
+package mechanics;
 import java.util.HashMap;
 
 public class Item {

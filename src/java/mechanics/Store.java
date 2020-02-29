@@ -1,4 +1,4 @@
-package game;
+package mechanics;
 
 public class Store {
     private Player player;
