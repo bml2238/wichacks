@@ -16,9 +16,9 @@ public class Player {
     public enum Orientation {STRAIGHT, GAY}
     public enum Class{LOWER, MIDDLE, UPPER}*/
 
-    public Race race = null;
-    private Orientation orien;
-    private Class econ; // "economic status" cause class doesn't work
+//    public Race race = null;
+//    private Orientation orien;
+//    private Class econ; // "economic status" cause class doesn't work
 
     public Player() {
 
