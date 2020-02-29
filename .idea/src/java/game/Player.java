@@ -1,7 +1,9 @@
+package game;
+
 /**
  * Player class, with all stats and methods to edit stats
  */
-public class Player {
+public class Player implements PlayerEffects {
 
     /** player variables */
     private String name;
@@ -43,7 +45,7 @@ public class Player {
     }
 
     public boolean isConfidentEnough(int level) {
-
+        return (reputation > level);
     }
 
 
