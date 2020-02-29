@@ -1,6 +1,9 @@
 public class Item {
     /** item stat effects */
-    private int selfEffect; //self esteem
-    private int repEffect;
+    public int selfEffect; //self esteem
+    public int repEffect;  //reputation effect
+    public int price;
+    public int exp; //business exp
+
 
 }
