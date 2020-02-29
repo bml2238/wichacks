@@ -1,5 +1,7 @@
 package game;
 
+import java.util.HashMap;
+
 public class Item {
     /** item stat effects */
     public int selfEffect; //self esteem
@@ -20,9 +22,15 @@ public class Item {
         this.exp = 0;
     }
 
+    public Item(int selfEffect, int repEffect, int price) {
+        this.selfEffect = selfEffect;
+        this.repEffect = repEffect;
+        this.price = price;
+    }
+
     public void setClothingStats(HashMap<String, Integer, Integer> clothing)
     {
-        
+
     }
 
     public void setMakeupStats(HashMap<String, Integer, Integer> makeup)

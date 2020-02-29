@@ -11,9 +11,10 @@ public class Store {
     private HashMap<String, Integer> clothing = new HashMap<>();
     private Random random;
 
-    public void setClothing(HashSet<String> clothing){ // need to differentiate between which is which i guess
+    public void setClothing(HashSet<String> clothing) { // need to differentiate between which is which i guess
         for (String clothes : clothing){
             this.clothing.put(clothes, (int) Math.random());
         }
     }
+
 }
