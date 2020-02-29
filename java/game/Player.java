@@ -1,6 +1,5 @@
 package game;
 
-
 /**
  * Player class, with all stats and methods to edit stats
  */
