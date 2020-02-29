@@ -13,6 +13,7 @@ public class Player{
     private double age;
     private int reputation; //0-100
     private double money;
+    private Business business;
 
     /** categories */
 /*    public enum Race {WHITE, BLACK, ASIAN, HISPANIC}
@@ -32,12 +33,22 @@ public class Player{
         this.selfEsteem = 50;
     }
 
+    public Player(String n, double income, double money) {
+        this.name = n;
+        this.income = income;
+        this.money = money;
+        this.age = 21;
+        this.reputation = 50;
+        this.selfEsteem = 50;
+    }
+
     /** getters */
     public int getSelfEsteem() { return this.selfEsteem; }
     public int getReputation () { return this.reputation; }
     public double getIncome() { return this.income; }
     public double getMoney() { return this.money; }
     public double getAge() { return this.age; }
+    public String getName() { return this.name; }
 
     /** changes self esteem +/- amount */
     private void changeSelfEsteem(int amount) { this.selfEsteem += amount; }
@@ -51,14 +62,11 @@ public class Player{
     public void purchase(Item item) {
         this.reputation += item.repEffect;
         this.selfEsteem += item.selfEffect;
-
+        this.money -= item.price;
     }
 
     public boolean isConfidentEnough(int level) {
         return reputation > level;
     }
-
-
-
 
 }
