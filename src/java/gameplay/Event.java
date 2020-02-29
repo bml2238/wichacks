@@ -22,6 +22,7 @@ public class Event {
     // making a bad business decision (like investment in a shady co.) that could result in losing employees and money
     /** increased difficulty of game? making it harder to get respect and employees making you
     work harder, in turn making you more successful */
+    // lack of effort from employees ... resulting in ?
 
 
 }

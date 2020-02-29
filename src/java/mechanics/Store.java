@@ -2,6 +2,7 @@ package mechanics;
 
 public class Store {
     private Player player;
+    private Business business;
 
     public void purchaseItem(Item item){
         if (player.isConfidentEnough(item.selfEffect)){
@@ -12,5 +13,19 @@ public class Store {
             player.changeRespect(-item.repEffect);
         }
         player.changeMoney(-item.price);
+    }
+
+    public void purchaseItemForBusiness (Item item){
+        // if respect is high enough it adds experience to the business
+        // otherwise it negatively impacts the business
+        if (player.getRespect() > item.repEffect){
+            player.changeRespect(item.repEffect);
+        }
+        else {
+            //
+            player.changeRespect(-item.repEffect);
+
+        }
+        // decrease from business funds
     }
 }
