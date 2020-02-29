@@ -38,7 +38,13 @@ public class Player {
     /** raises/lowers player income by percent */
     public void raise(double percent) { this.income *= percent; }
 
+    public void purchase(Item item) {
+        this.reputation += item.repEffect;
+    }
 
+    public boolean isConfidentEnough(int level) {
+
+    }
 
 
 }
