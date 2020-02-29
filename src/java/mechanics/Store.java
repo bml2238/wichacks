@@ -1,8 +1,6 @@
-package game;
+package mechanics;
 
 public class Store {
-
-    private int effect;
 
     public void purchaseMakeup(Item item){
 
