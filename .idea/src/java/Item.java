@@ -5,5 +5,11 @@ public class Item {
     public int price;
     public int exp; //business exp
 
+    public Item() {
+        this.selfEffect = 0;
+        this.repEffect = 0;
+        this.price = 0;
+        this.exp = 0;
+    }
 
 }
