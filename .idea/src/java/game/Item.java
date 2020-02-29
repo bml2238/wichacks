@@ -1,3 +1,5 @@
+package game;
+
 public class Item {
     /** item stat effects */
     public int selfEffect; //self esteem
