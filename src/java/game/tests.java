@@ -17,13 +17,18 @@ public class tests {
 
         Item shirt = new Item(20, 20, 50);
 
-        System.out.println("There is a shirt that costs $" + shirt.price + ".");
+        System.out.println("There is a shirt that costs $" + shirt.price + " and you have $" + woman.getMoney());
         System.out.println("You must have at least 40 self-esteem to wear it comfortably");
         System.out.println("Will you buy it? true/false");
 
         boolean purchase = scan.nextBoolean();
 
-        woman.purchaseClothing(shirt);
+        if(purchase)
+            woman.purchaseClothing(shirt);
+
+        System.out.println("You have $" + woman.getMoney());
+        System.out.println("Your self esteem is " + woman.getSelfEsteem());
+
 
     }
 }
