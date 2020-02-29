@@ -3,7 +3,7 @@ package game;
 /**
  * Player class, with all stats and methods to edit stats
  */
-public class Player implements PlayerEffects {
+public class Player{
 
     /** player variables */
     private String name;
