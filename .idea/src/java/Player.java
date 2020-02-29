@@ -43,7 +43,7 @@ public class Player {
     }
 
     public boolean isConfidentEnough(int level) {
-
+        return false;
     }
 
 

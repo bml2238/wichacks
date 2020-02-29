@@ -1,8 +1,10 @@
+import java.util.Map;
+
 public class Business {
     private int employees;
     private int businessIncome;
-    public int level;
-    public int exp;
+    private int level;
+    private int exp;
 
     public enum action
     {
@@ -12,4 +14,6 @@ public class Business {
         VIEW,
         GETINVESTMENTS
     }
+
+
 }
