@@ -6,16 +6,11 @@ public class Store {
     public void purchaseItem(Item item){
         if (player.isConfidentEnough(item.selfEffect)){
             player.changeSelfEsteem(item.selfEffect);
-            player.changeMoney(-item.price);
         }
         else {
             player.changeSelfEsteem(-item.selfEffect);
-            player.changeReputation(-item.repEffect);
-            player.changeMoney(-item.price);
+            player.changeRespect(-item.repEffect);
         }
+        player.changeMoney(-item.price);
     }
-
-
-
-
 }
