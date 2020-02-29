@@ -50,22 +50,17 @@ public class Player{
     public String getName() { return this.name; }
 
     /** changes self esteem +/- amount */
-    private void changeSelfEsteem(int amount) { this.selfEsteem += amount; }
+    public void changeSelfEsteem(int amount) { this.selfEsteem += amount; }
 
     /** changes reputation +/- amount */
-    private void changeReputation(int amount) { this.reputation += amount; }
+    public void changeReputation(int amount) { this.reputation += amount; }
+
+    public void changeMoney(int amount) {
+        this.money += amount;
+    }
 
     /** raises/lowers player income by percent */
     public void raise(double percent) { this.income *= percent; }
-
-    public void purchaseClothing(Item item) {
-        if(this.isConfidentEnough(item.repEffect))
-            this.reputation += item.repEffect;
-        else
-            this.reputation -= item.repEffect;
-        this.selfEsteem += item.selfEffect;
-        this.money -= item.price;
-    }
 
     public boolean isConfidentEnough(int level) {
         return reputation > level;
