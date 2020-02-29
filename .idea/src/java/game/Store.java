@@ -3,7 +3,6 @@ package game;
 public class Store {
 
     private int effect;
-    // just random set to help determine effect on player
 
     public void purchaseMakeup(Item item){
 
@@ -14,6 +13,10 @@ public class Store {
     }
 
     public void purchaseClothing(Item item){
+
+    }
+
+    public void purchaseMedicine(Item item){
 
     }
 
