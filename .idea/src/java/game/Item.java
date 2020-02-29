@@ -9,11 +9,11 @@ public class Item {
     public int price;
     public int exp; //business exp
 
-    private HashMap<String, Integer, Integer> clothing = new HashMap<>();
-    private HashMap<String, Integer, Integer> makeup = new HashMap<>();
+    private HashMap<String, Integer> clothing = new HashMap<>();
+    private HashMap<String, Integer> makeup = new HashMap<>();
     //private HashMap<String, Integer, Integer> medicine = new HashMap<>(); optional
-    private HashMap<String, Integer, Integer> menstrualProducts = new HashMap<>();
-    private HashMap<String, Integer, Integer> house = new HashMap<>();
+    private HashMap<String, Integer> menstrualProducts = new HashMap<>();
+    private HashMap<String, Integer> house = new HashMap<>();
 
     public Item() {
         this.selfEffect = 0;
@@ -28,27 +28,27 @@ public class Item {
         this.price = price;
     }
 
-    public void setClothingStats(HashMap<String, Integer, Integer> clothing)
+    public void setClothingStats(HashMap<String\> clothing)
     {
 
     }
 
-    public void setMakeupStats(HashMap<String, Integer, Integer> makeup)
+    public void setMakeupStats(HashMap<String> makeup)
     {
 
     }
 
-    public void setMedicineStats(HashMap<String, Integer, Integer> medicine)
+    public void setMedicineStats(HashMap<String> medicine)
     {
 
     }
 
-    public void setMenstrualProductsStats(HashMap<String, Integer, Integer> menstrualProducts)
+    public void setMenstrualProductsStats(HashMap<String> menstrualProducts)
     {
 
     }
 
-    public void setHouseStats(HashMap<String, Integer, Integer> house)
+    public void setHouseStats(HashMap<String> house)
     {
 
     }
