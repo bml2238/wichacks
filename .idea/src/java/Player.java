@@ -29,5 +29,16 @@ public class Player {
         this.selfEsteem = 50;
     }
 
+    /** changes self esteem +/- amount */
+    private void changeSelfEsteem(int amount) { this.selfEsteem += amount; }
+
+    /** changes reputation +/- amount */
+    private void changeReputation(int amount) { this.reputation += amount; }
+
+    /** raises/lowers player income by percent */
+    public void raise(double percent) { this.income *= percent; }
+
+
+
 
 }
