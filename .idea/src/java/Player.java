@@ -5,10 +5,10 @@ public class Player {
 
     /** player variables */
     private String name;
-    private int selfEsteem;
+    private int selfEsteem; //0-100
     private double income;
     private double age;
-    private int repuation;
+    private int reputation; //0-100
     private double money;
 
     /** categories */
@@ -21,12 +21,13 @@ public class Player {
 //    private Class econ; // "economic status" cause class doesn't work
 
     public Player() {
-
-    }
-
-    public void setRace(Race race) {
-        this.race = race;
+        this.name = "Woman";
         this.income = 0;
-        this.orien = null;
+        this.money = 10000;
+        this.age = 21;
+        this.reputation = 50;
+        this.selfEsteem = 50;
     }
+
+
 }
