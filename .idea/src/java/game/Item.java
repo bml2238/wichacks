@@ -7,6 +7,8 @@ public class Item {
     public int price;
     public int exp; //business exp
 
+    private HashMap<String, Integer> clothing = new HashMap<>();
+    
     public Item() {
         this.selfEffect = 0;
         this.repEffect = 0;
