@@ -85,7 +85,12 @@ public class Event {
         events.add(TOO_MANY_GIRLS);
 
         /*$$$$$$$$$$$$$$$$$ EMPLOYEE EVENTS $$$$$$$$$$$$$$$$$*/
+        final Event EMPLOYEE_QUITS = new Event("EMPLOYEE_QUITS", .4, -10,
+                true, Type.RESPECT, Trigger.EMPLOYEE);
 
+        events.add(EMPLOYEE_QUITS);
+
+        final Event E
 
         /*$$$$$$$$$$$$$$$$$ JOB EVENTS $$$$$$$$$$$$$$$$$*/
         final Event REDUCED_FUNDING = new Event("REDUCED_FUNDING", .1, -10, true,
