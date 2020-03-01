@@ -27,7 +27,7 @@ public class RoadBlock {
 
     /** list of roadblocks */
     private ArrayList<RoadBlock> roadblocks = new ArrayList<>();
-    private ArrayList<RoadBlock> intervalRoadblock = new ArrayList();
+    private ArrayList<RoadBlock> intervalRoadBlock = new ArrayList<>();
 
     /** roadblock that will occur when reaching a certain time */
     private RoadBlock(String name, int timeTriggered, int penalty, Type type) {
