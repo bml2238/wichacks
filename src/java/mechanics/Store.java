@@ -1,7 +1,11 @@
 package mechanics;
 
+<<<<<<< HEAD
 import java.util.HashMap;
 import java.util.HashSet;
+=======
+import java.util.ArrayList;
+>>>>>>> b9e605032011235300334a86b985fbc7264e2794
 
 public class Store {
     private Player player;
@@ -30,6 +34,7 @@ public class Store {
         // store items in shopping cart for when they go to purchase it
         // calling purchase item in the end
     }
+
 
     public void purchasePersonalItem(Item item){
         if (player.isConfidentEnough(item.selfEffect)){
