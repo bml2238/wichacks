@@ -1,20 +1,29 @@
 package mechanics;
 
 import javax.swing.plaf.synth.SynthOptionPaneUI;
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class Store {
     private Player player;
     private Business business;
     private Item item;
-    private HashMap<String, Item> storeItems = new HashMap<String, Item>();
+    private ArrayList<Item> storeItems = new ArrayList<>();
 
-    public ArrayList<Item> displayItems(){
+    public ArrayList<Item> addItems(){
+        // changed name because fcn was changed to add items instead
         ArrayList<Item> items = new ArrayList<>();
-        for (Item item : storeItems.values()){
+        for (Item item : storeItems){
             items.add(item);
         }
         return items;
+    }
+
+    public void displayItems(){
+        // you still need to use something print out the items though
+        for (Item item: storeItems){
+            System.out.println(item);
+        }
     }
 
     public void goShopping(){
