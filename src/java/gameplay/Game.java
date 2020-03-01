@@ -3,12 +3,15 @@ package gameplay;
 import mechanics.Business;
 import mechanics.Player;
 
+import java.io.BufferedWriter;
 import java.util.ArrayList;
 
 /** this is for repeated actions in the game */
 public class Game {
     private String message = "";
     private double profit = 0;
+
+    ArrayList<Event> events = Event.createEvents();
 
     public Game() {}
 
@@ -56,6 +59,20 @@ public class Game {
         else
             message += "You lost $" + profit + " this month.\n";
         message += "You made $" + proceeds + " in gross profit and paid your employees $" + payroll + " in total.\n";
+
+        return message;
+    }
+
+    public String getFunding(Player p) {
+        message = "You ask investors for funding.\n";
+        Business business = p.getBusiness();
+        double amount = business.attemptFunding(p);
+        if(amount > 0) {
+            message += "They refuse.\n";
+            return message;
+        }
+        if(p.getSelfEsteem() > 80 && Event.isTriggered(events.get(REJECTED_FUNDING))
+
 
         return message;
     }
