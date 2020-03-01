@@ -22,8 +22,8 @@ public class Business {
         FIRE,
         ADVERTISE,
         VIEW,
-        GETINVESTMENTS,
-        TIMEPASSES
+        GET_INVESTMENTS,
+        TIME_PASSES
     }
 
     public void lookToHire()
