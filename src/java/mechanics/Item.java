@@ -27,6 +27,7 @@ public class Item {
         this.price = price;
     }
 
+
     public void setClothingStats(HashMap<String, Integer> clothing)
     {
 

@@ -60,6 +60,10 @@ public class Business {
         exp += 200;
     }
 
+    public void changeBusinessFunds(int amount){
+        this.businessFunds += amount;
+    }
+
     public void lvlup()
     {
         if(exp % lvllimit == 0)
