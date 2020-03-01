@@ -5,6 +5,7 @@ import mechanics.Player;
 
 import java.io.BufferedWriter;
 import java.util.ArrayList;
+import java.util.Objects;
 
 /** this is for repeated actions in the game */
 public class Game {
@@ -14,13 +15,17 @@ public class Game {
 
     public Game(Player player) { this.player = player; }
 
-    ArrayList<Event> events = Event.createEvents(player);
+    ArrayList<Event> events = Event.createEvents(this.player);
 
-
+    /**
+     * generates a string of the player's stats
+     * @param p the player
+     * @return the stats
+     */
     public String displayPlayerStats(Player p) {
         message = "";
         message += "Your name is " + p.getName() + " and you are " + p.getAge() + " years old.\n" +
-                         "You make $" + profit + " a month and have $" + p.getMoney() + " in the bank.\n";
+                         "You have $" + p.getMoney() + " in the bank.\n";
 
         //RESPECT MESSAGE
         if(p.getRespect() < 25)
@@ -41,14 +46,6 @@ public class Game {
         return message;
     }
 
-    public String displayBusinessStats(Player p) {
-        message = "";
-        ArrayList<String> stats = p.getBusiness().viewBusiness();
-        for(String stat : stats)
-            System.out.println(stat);
-
-        return message;
-    }
 
     /** searches through events and returns the requested event */
     private Event getEvent(String name) {
@@ -56,52 +53,7 @@ public class Game {
             if(e.getName().equals(name))
                 return e;
         }
-        return null; //it /shouldn't/ reach this, but whatever
+        return null;
     }
 
-    public String runBusiness(Player p) {
-        message = "";
-        Business business = p.getBusiness();
-        double proceeds = business.workEmployees(p);
-        double payroll = business.payEmployee();
-        profit = proceeds - payroll;
-        if(profit > 0)
-            message += "You made $" + profit + " this month.\n";
-        else
-            message += "You lost $" + profit + " this month.\n";
-        message += "You made $" + proceeds + " in gross profit and paid your employees $" + payroll + " in total.\n";
-
-        return message;
-    }
-
-    public String getFunding(Player p) {
-        message = "You ask investors for funding.\n";
-        Business business = p.getBusiness();
-        double amount = business.attemptFunding(p);
-        if(amount > 0) {
-            message += "They refuse.\n";
-            return message;
-        }
-
-        //possible triggered event "rejected funding"
-        if(p.getSelfEsteem() > 80 && Event.isTriggered(getEvent("REJECTED_FUNDING"))) {
-            message += "They see you as arrogant and overconfident. They refuse.\n" +
-                        "You were just sure of yourself, not overconfident or arrogant.\n" +
-                        "Doubt enters your mind. Maybe you are too confident. Too demanding.\n" +
-                        "Your self-esteem takes a hit.\n";
-            getEvent("REJECTED_FUNDING").affected(p);
-            return message;
-        }
-
-        //possible triggered event "reduced funding"
-        if(Event.isTriggered(getEvent("REDUCED_FUNDING"))) {
-            message += "The investors don't seem very fond of you--or women in general.\n" +
-                        "They offer half as much as usual.\n";
-            amount = amount/2;
-        }
-
-        business.changeBusinessFunds((int)amount);
-
-        return message;
-    }
 }

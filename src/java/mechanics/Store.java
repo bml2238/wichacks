@@ -9,16 +9,12 @@ public class Store {
     private Item item;
     private HashMap<String, Item> storeItems = new HashMap<String, Item>();
 
-    public void displayItems(){
+    public ArrayList<Item> displayItems(){
+        ArrayList<Item> items = new ArrayList<>();
         for (Item item : storeItems.values()){
-            System.out.println(item);
+            items.add(item);
         }
-    }
-
-    @Override
-    public String toString(){
-        return "Price: " + item.price + "Self Effect: " + item.selfEffect + "Respect Effect: " + item.resEffect
-                + "Business Experience: " + item.exp;
+        return items;
     }
 
     public void goShopping(){
@@ -41,6 +37,13 @@ public class Store {
         System.out.println("Purchase done! Have a good day");
     }
 
+    /** a copy of goShopping() where the desired items are finite */
+    public void goFiniteShopping(ArrayList<Item> items){
+        for (Item item : items){
+            purchasePersonalItem(item);
+        }
+    }
+
     public void purchasePersonalItem(Item item){
         if (player.isConfidentEnough(item.selfEffect)){
             player.changeSelfEsteem(item.selfEffect);
@@ -48,7 +51,6 @@ public class Store {
         else {
             player.changeSelfEsteem(-item.selfEffect);
             player.changeRespect(-item.resEffect);
-            System.out.println();
         }
         player.changeMoney(-item.price);
     }
@@ -63,12 +65,14 @@ public class Store {
         business.changeBusinessFunds(-item.price);
     }
 
-    public void upgradeHouse(String property){
+    /** whether or not you can upgrade the house */
+    public boolean upgradeHouse(String property){
         if (business.getLevel() >= 25 && business.getLevel() < 75){
             player.changeProperty(property);
+            return true;
         }
         else {
-            System.out.println("You are not successful enough to upgrade your house");
+            return false;
         }
     }
 

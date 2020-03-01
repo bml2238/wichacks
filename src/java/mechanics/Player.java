@@ -50,7 +50,7 @@ public class Player{
         this.inventory = null;
         this.consumables = null;
         this.property = "Studio";
-        this.business = new Business();
+        this.business = new Business(Business.Type.TECHNOLOGY);
     }
 
     /** getters */
