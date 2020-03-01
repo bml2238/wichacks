@@ -39,17 +39,17 @@ public class Store {
         }
         else {
             player.changeSelfEsteem(-item.selfEffect);
-            player.changeRespect(-item.repEffect);
+            player.changeRespect(-item.resEffect);
         }
         player.changeMoney(-item.price);
     }
 
     public void purchaseItemForBusiness (Item item){
-        if (player.getRespect() > item.repEffect){
-            player.changeRespect(item.repEffect);
+        if (player.getRespect() > item.resEffect){
+            player.changeRespect(item.resEffect);
         }
         else {
-            player.changeRespect(-item.repEffect);
+            player.changeRespect(-item.resEffect);
         }
         business.changeBusinessFunds(-item.price);
     }
