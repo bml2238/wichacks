@@ -29,8 +29,6 @@ public class Item {
         this.price = price;
     }
 
-<<<<<<< HEAD
-
     public void setClothingStats(HashMap<String, Integer> clothing){
     {
 
@@ -39,9 +37,10 @@ public class Item {
 
     }
 
-    public void setMakeupStats(HashMap<String, Integer> makeup) {
+    public void setMakeupStats(HashMap<String, Integer> makeup){
 
-=======
+    }
+
     public void setClothingStats(HashMap<String, Object> clothing)
     {
         clothing.put("Dress", Item(0,0,0));
@@ -49,7 +48,6 @@ public class Item {
         clothing.put("Skin Tight Pink Body Suit", Item(100, 100, 29.99)); //Ultimate respect and ultimate self confidence
         clothing.put("High Heels", Item(5, 5, 50));
         clothing.put("Gucci Belt", Item(0, 20, 650));
->>>>>>> 6a3ec2a9da1a5a6dce4703b8733fa5f283d69953
     }
 
     public void setMakeupStats(HashMap<String, Object> makeup)
