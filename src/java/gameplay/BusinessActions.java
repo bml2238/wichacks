@@ -40,7 +40,6 @@ public class BusinessActions {
         return null;
     }
 
-    //TODO: test
     /**
      * the monthly tasks for the business ran automatically
      * @param p player

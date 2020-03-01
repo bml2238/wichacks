@@ -82,7 +82,7 @@ public class Business {
             businessFunds += e.getSatisfaction() * e.getWorkPoints();
             exp += 10;
         }
-        double profit = businessFunds*0.03;
+        double profit = businessFunds*.2;
         player.changeMoney(profit);
         return profit;
     }

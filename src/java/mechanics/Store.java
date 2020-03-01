@@ -32,16 +32,16 @@ public class Store {
         displayItems();
         System.out.println("What items would you like to buy?");
         String item = sc.nextLine();
-        while (true){
-            shoppingCart.add(storeItems.get(item));
+        while (true) {
+  //          shoppingCart.add(storeItems.get(item)); //FOR TESTING ONLY
             System.out.println("Would you like to buy another item? (y/n)");
             String input = sc.nextLine();
             if (input.toLowerCase().equals("n")){
                 break;
             }
         }
-        for (int i = 0; i < shoppingCart.size(); i++){
-            purchasePersonalItem(shoppingCart.get(i));
+        for (Item value : shoppingCart) {
+            purchasePersonalItem(value);
         }
         System.out.println("Purchase done! Have a good day");
     }
