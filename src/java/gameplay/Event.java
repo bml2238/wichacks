@@ -23,6 +23,7 @@ public class Event {
     /** increased difficulty of game? making it harder to get respect and employees making you
     work harder, in turn making you more successful */
     // lack of effort from employees ... resulting in ?
+    // upgrading business or house if respect & business level is high enough
 
 
 }

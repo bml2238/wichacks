@@ -4,7 +4,7 @@ public class Store {
     private Player player;
     private Business business;
 
-    public void purchaseItem(Item item){
+    public void purchasePersonalItem(Item item){
         if (player.isConfidentEnough(item.selfEffect)){
             player.changeSelfEsteem(item.selfEffect);
         }
