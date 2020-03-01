@@ -44,6 +44,7 @@ public class main {
         ArrayList<Event> events = Event.createEvents(player); //remember to check events.txt for when they trigger!
 
         while (time != death) {
+            /** Time counter */
             time = game.passTime();
             if (yearInc % 12 == 0) {
                 month = "December";
@@ -87,6 +88,9 @@ public class main {
                 year += 1;
                 yearInc = 1;
             }
+
+            System.out.println("What do you want to do?: ");
+            String action = scan.nextLine();
 
             /** if player has a condo or apartment, every month, they will charge a fee */
             if (player.getProperty() == "Condo" || player.getProperty() == "Apartment") {
