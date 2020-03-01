@@ -1,3 +1,8 @@
+EMPLOYEE_QUITS: if your business starts to do bad due to the effects of other negative effects, an
+                employee loses confidence in you and quits
+
+LOST_THEIR_COOL: you upset a man and he screams at you.
+
 NOT_PRETTY_ENOUGH: even if your confidence level is high enough for this article of clothing you just bought, you
                    still might feel bad
 
@@ -16,6 +21,7 @@ RUMORED_AFFAIR: after you fire a male employee within 5 years of your age, he ma
 SLUT_SHAMING: if you purchase a revealing piece of clothing, people might talk
 
 TOO_MANY_GIRLS: if you hire a woman and it causes your gender ratio to be more than 50/50 in favor of women
+<<<<<<< HEAD
                 your male employees might start complaining and calling you biased
 
 EMPLOYEE_QUITS: if your business starts to do bad due to the effects of other negative events, an
@@ -24,3 +30,6 @@ EMPLOYEE_QUITS: if your business starts to do bad due to the effects of other ne
 BAD_INVESTMENT_DECISION: you decide to invest in a product you thought would improve your business but instead it
                          doesn't work
 
+=======
+                your male employees might start complaining and calling you biased
+>>>>>>> 5f9722788052ce18b7a25be962cc7374cf84c4e7

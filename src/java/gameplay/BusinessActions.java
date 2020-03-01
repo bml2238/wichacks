@@ -1,6 +1,7 @@
 package gameplay;
 
 import mechanics.Business;
+import mechanics.Employee;
 import mechanics.Player;
 
 import java.util.ArrayList;
@@ -102,6 +103,65 @@ public class BusinessActions {
         message += "You receive $" + amount;
 
         business.changeBusinessFunds((int)amount);
+
+        return message;
+    }
+
+    /**
+     * firing an employee and the events that may occur
+     * @param p the player
+     * @param employee the fired employee
+     * @return the message
+     */
+    public String fireEmployee(Player p, Employee employee) {
+        message = "";
+        p.getBusiness().fireEmployee(employee);
+        message += "You fire " + employee.getName() + ".\n";
+        if(employee.getGender().equals("male")) {
+
+            //possible lost their cool event
+            Event e = getEvent("LOST_THEIR_COOL");
+            if(Event.isTriggered(e)) {
+                message += "He screams at you and calls you a dumb whore.\n";
+                if(p.getSelfEsteem() > 65)
+                    message += "You are not effected. You know he is just upset and lashing out.\n";
+                else
+                    message += "You are not confident enough to brush off his words. Your self esteem takes a hit.\n";
+                e.affected(p);
+            }
+
+            //possible rumored affair event
+            Event e2 = getEvent("RUMORED_AFFAIR");
+            if(Math.abs(p.getAge() - employee.getAge()) < 6) {
+                if(Event.isTriggered(e2)) {
+                    message += "As he leaves, he tells the other employees it's because you both had an affair" +
+                               "that ended bad.\n";
+                    if(p.getSelfEsteem() > 60) { //if you are confident enough to try say he's a liar
+                        message += "You attempt to dispel the rumors ";
+                        if(p.getRespect() > 50)
+                            message += "and your employees believe you.\n";
+                        else {
+                            message += "but your employees don't believe you. They begin to think you're a whore.\n";
+                            e2.affected(p);
+                        }
+                    }//close confident
+                    else {
+                        message += "You are too scared to say anything ";
+                        if (p.getRespect() > 50) {
+                            message += "but your employees trust you. They don't believe him.\n";
+                        }
+                        else {
+                            message += "and your employees take this as confirmation. They begin to think you're a slut." +
+                                    "\n";
+                            e2.affected(p);
+                        }
+                    }
+                }
+            }
+
+        }
+
+
 
         return message;
     }
