@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public class Roadblock {
 
     /** a roadblock is a timed event */
+    String name;
     private int timeTriggered;
     private int timeInverval;
     private Event event;
@@ -17,16 +18,17 @@ public class Roadblock {
 
     /** roadblock that will occur when reaching a certain time */
     private Roadblock(String name, int timeTriggered, Event e) {
-        this.name = name
+        this.name = name;
         this.timeTriggered = timeTriggered;
         this.event = e;
     }
 
-    private intervalRoadBlock(String name, int interval, Event e)
-    {
+    private void intervalRoadBlock(String name, int interval, Event e) {
         
     }
-    privae IntervalRoadblock(String name)
+ //   private intervalRoadblock(String name) {} delete
+
+
     public ArrayList<Roadblock> createRoadblocks() {
         /** $$$$$$$$$$$$$$$$$ TAXES $$$$$$$$$$$$$$$$$$$$$$*/
 
