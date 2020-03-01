@@ -50,10 +50,13 @@ public class Game {
         return message;
     }
 
+    /** searches through events and returns the requested event */
     private Event getEvent(String name) {
         for(Event e : events) {
-            if(e.name)
+            if(e.getName().equals(name))
+                return e;
         }
+        return null; //it /shouldn't/ reach this, but whatever
     }
 
     public String runBusiness(Player p) {
@@ -80,9 +83,24 @@ public class Game {
             return message;
         }
 
-        if(p.getSelfEsteem() > 80 && Event.isTriggered(events.get())
-            jfdklsf;
+        //possible triggered event "rejected funding"
+        if(p.getSelfEsteem() > 80 && Event.isTriggered(getEvent("REJECTED_FUNDING"))) {
+            message += "They see you as arrogant and overconfident. They refuse.\n" +
+                        "You were just sure of yourself, not overconfident or arrogant.\n" +
+                        "Doubt enters your mind. Maybe you are too confident. Too demanding.\n" +
+                        "Your self-esteem takes a hit.\n";
+            getEvent("REJECTED_FUNDING").affected(p);
+            return message;
+        }
 
+        //possible triggered event "reduced funding"
+        if(Event.isTriggered(getEvent("REDUCED_FUNDING"))) {
+            message += "The investors don't seem very fond of you--or women in general.\n" +
+                        "They offer half as much as usual.\n";
+            amount = amount/2;
+        }
+
+        business.changeBusinessFunds((int)amount);
 
         return message;
     }
