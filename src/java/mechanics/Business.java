@@ -14,10 +14,19 @@ public class Business {
     private double genderratio;
     private ArrayList<Employee> employees;
     private ArrayList<Employee> allpossible;
+    private Type type;
 
-    public Business()
+    public Business(Business.Type type)
     {
         this.employees = new ArrayList<>();
+        this.type = type;
+    }
+
+    public enum Type
+    {
+        TECHNOLOGY,
+        ARTIST,
+        POLITICIAN
     }
 
     public enum action
