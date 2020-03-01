@@ -18,22 +18,23 @@ public class Store {
     }
 
     public void goShopping(){
-        HashMap<String, Item> shoppingCart = new HashMap<>();
+        ArrayList<Item> shoppingCart = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
         displayItems();
         System.out.println("What items would you like to buy?");
         String item = sc.nextLine();
         while (true){
-            shoppingCart.put(item, storeItems.get(item));
+            shoppingCart.add(storeItems.get(item));
             System.out.println("Would you like to buy another item? (y/n)");
             String input = sc.nextLine();
             if (input.toLowerCase().equals("n")){
                 break;
             }
         }
-        for (Item items : shoppingCart.values()){
-            purchasePersonalItem(shoppingCart.get(items));
+        for (int i = 0; i < shoppingCart.size(); i++){
+            purchasePersonalItem(shoppingCart.get(i));
         }
+        System.out.println("Purchase done! Have a good day");
     }
 
     /** a copy of goShopping() where the desired items are finite */
