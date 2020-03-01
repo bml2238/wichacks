@@ -1,5 +1,5 @@
 package mechanics;
-import java.util.Array.List;
+import java.util.ArrayList;
 
 /**
  * Player class, with all stats and methods to edit stats
@@ -32,7 +32,7 @@ public class Player{
         this.age = 21;
         this.respect = 50;
         this.selfEsteem = 50;
-        this.inventory
+ //       this.inventory
     }
 
     public Player(String n, double income, double money) {
@@ -42,7 +42,7 @@ public class Player{
         this.age = 21;
         this.respect = 50;
         this.selfEsteem = 50;
-        this.inventory
+        this.inventory = null;
     }
 
     /** getters */
@@ -52,7 +52,7 @@ public class Player{
     public double getMoney() { return this.money; }
     public double getAge() { return this.age; }
     public String getName() { return this.name; }
-    public ArrayList<String> getInventory() { return this.inventoy; }
+    public ArrayList<String> getInventory() { return this.inventory; }
 
     public void age() { this.age++; }
 
@@ -72,10 +72,10 @@ public class Player{
     public void raise(double percent) { this.income *= percent; }
 
     public void purchaseClothing(Item item) {
-        if(this.isConfidentEnough(item.repEffect))
-            this.respect += item.repEffect;
+        if(this.isConfidentEnough(item.resEffect))
+            this.respect += item.resEffect;
         else
-            this.respect -= item.repEffect;
+            this.respect -= item.resEffect;
         this.selfEsteem += item.selfEffect;
         this.money -= item.price;
     }
@@ -85,8 +85,7 @@ public class Player{
     }
 
     /** adds Item to the player's inventory */
-    public void addItem(String item)
-    {
+    public void addItem(String item) {
         inventory.add(item);
     }
 }

@@ -1,5 +1,7 @@
 package mechanics;
 
+import game.Item;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.ArrayList;
@@ -8,6 +10,8 @@ public class Store {
     private Player player;
     private Business business;
     private Item item;
+    private HashMap<String, Item> storeItems = new HashMap<String, Item>();
+    private ArrayList<Item> storeItem = new ArrayList<Item>();
 
     public enum typeOfItem {
         CLOTHING,
@@ -16,20 +20,25 @@ public class Store {
         HOUSE;
     }
 
-    private HashMap<String, Item> storeItems = new HashMap<String, Item>();
-
     public void displayItems(){
         // display items in store based on what they're looking for
-        HashSet<Item> storeItem = new HashSet<>();
         for (String s : storeItems.keySet()){
-//            storeItem.add(storeItems.get(s));
             System.out.println(s);
         }
+    }
+
+    @Override
+    public String toString(){
+        return "Price" + item.price + "Self Effect: " + item.selfEffect + "Respect Effect: " + item.resEffect
+                + "Business Experience" + item.exp;
     }
 
     public void getItem(){
         // store items in shopping cart for when they go to purchase it
         // calling purchase item in the end
+        for (String s: storeItems.keySet()){
+            storeItem.add(storeItems.get(s));
+        }
     }
 
 
@@ -39,17 +48,17 @@ public class Store {
         }
         else {
             player.changeSelfEsteem(-item.selfEffect);
-            player.changeRespect(-item.repEffect);
+            player.changeRespect(-item.resEffect);
         }
         player.changeMoney(-item.price);
     }
 
     public void purchaseItemForBusiness (Item item){
-        if (player.getRespect() > item.repEffect){
-            player.changeRespect(item.repEffect);
+        if (player.getRespect() > item.resEffect){
+            player.changeRespect(item.resEffect);
         }
         else {
-            player.changeRespect(-item.repEffect);
+            player.changeRespect(-item.resEffect);
         }
         business.changeBusinessFunds(-item.price);
     }
