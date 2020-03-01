@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class Business {
-    private int employeenumber;//can just use employees.size();
     private int businessFunds;
     private int level;
     private int lvllimit;
@@ -23,7 +22,16 @@ public class Business {
         FIRE,
         ADVERTISE,
         VIEW,
-        GETINVESTMENTS
+        GETINVESTMENTS,
+        TIMEPASSES
+    }
+
+    public void lookToHire()
+    {
+        for(Employee e: employees)
+        {
+            businessFunds -= e.getSalary();
+        }
     }
 
     public void payEmployee()
@@ -62,7 +70,7 @@ public class Business {
 
     public void lvlup()
     {
-        if(exp % lvllimit == 0)
+        if(exp >= lvllimit)
         {
             this.level++;
             lvllimit += 1000;
