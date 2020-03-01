@@ -15,18 +15,17 @@ feel free to alphabetize the events
 put events AFTER this mark!!! otherwise they will not be read
 $$$
 
-NOT_PRETTY_ENOUGH: [even if your confidence level is high enough for this article of clothing you just bought, you
-                    still might feel bad] BUYING, false, SELF_ESTEEM, -15, $ -.1 $
+NOT_PRETTY_ENOUGH: even if your confidence level is high enough for this article of clothing you just bought, you
+                   still might feel bad
 
-RUMORED_AFFAIR: [after you fire a male employee within 5 years of your age, he may spread the rumor that you had an
-                 affair that turned out bad and that's why he was fired. you can either try and dispel the
-                 rumors or keep quiet] FIRING, true, RESPECT, -10 (.7) +10, RESPECT, -5, $ .15 $
+RUMORED_AFFAIR: after you fire a male employee within 5 years of your age, he may spread the rumor that you had an
+                affair that turned out bad and that's why he was fired. you can either try and dispel the
+                rumors or keep quiet
 
-SLUT_SHAMING: [if you purchase a revealing piece of clothing, people might talk] BUYING, RESPECT, -3, $ .25 $
+SLUT_SHAMING: if you purchase a revealing piece of clothing, people might talk
 
-TOO_MANY_GIRLS: [if you hire a woman and it causes your gender ratio to be more than 50/50 in favor of women
-                 your male employees might start complaining and calling you biased] HIRING, false, RESPECT, -5,
-                 $ .3 $
+TOO_MANY_GIRLS: if you hire a woman and it causes your gender ratio to be more than 50/50 in favor of women
+                your male employees might start complaining and calling you biased
 
 
 
