@@ -71,15 +71,6 @@ public class Player{
     /** raises/lowers player income by percent */
     public void raise(double percent) { this.income *= percent; }
 
-    public void purchaseClothing(Item item) {
-        if(this.isConfidentEnough(item.resEffect))
-            this.respect += item.resEffect;
-        else
-            this.respect -= item.resEffect;
-        this.selfEsteem += item.selfEffect;
-        this.money -= item.price;
-    }
-
     public boolean isConfidentEnough(int level) {
         return respect > level;
     }

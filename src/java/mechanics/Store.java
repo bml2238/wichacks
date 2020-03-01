@@ -1,29 +1,20 @@
 package mechanics;
 
-import game.Item;
-
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Store {
     private Player player;
     private Business business;
     private Item item;
     private HashMap<String, Item> storeItems = new HashMap<String, Item>();
-    private ArrayList<Item> storeItem = new ArrayList<Item>();
-
-    public enum typeOfItem {
-        CLOTHING,
-        MAKEUP,
-        MENSTRUALPRODUCT,
-        HOUSE;
-    }
 
     public void displayItems(){
-        // display items in store based on what they're looking for
-        for (String s : storeItems.keySet()){
-            System.out.println(s);
+        // display items in store
+        for (Item item : storeItems.values()){
+            System.out.println(item);
         }
     }
 
@@ -33,11 +24,15 @@ public class Store {
                 + "Business Experience" + item.exp;
     }
 
-    public void getItem(){
-        // store items in shopping cart for when they go to purchase it
-        // calling purchase item in the end
-        for (String s: storeItems.keySet()){
-            storeItem.add(storeItems.get(s));
+    public HashSet<Item> void addToShoppingCart(int itemsWanted, String item){
+        // amount of items they're buying
+        HashSet<Item> shoppingCart = new HashSet<>();
+        while (shoppingCart.size() < itemsWanted){
+            shoppingCart.add(storeItems.get(item);
+        }
+        while (shoppingCart.size() > 0) {
+//            Item itemsInCart = shoppingCart.remove(item);
+//            purchasePersonalItem(itemsInCart);
         }
     }
 

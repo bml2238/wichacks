@@ -1,8 +1,6 @@
 package mechanics;
 import java.util.HashMap;
 
-import java.util.HashMap;
-
 public class Item {
     /** item stat effects */
     public int selfEffect; //self esteem
