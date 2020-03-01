@@ -21,6 +21,12 @@ public class Item {
         this.exp = 0;
     }
 
+    @Override
+    public String toString(){
+        return "Price: " + this.price + "Self Effect: " + this.selfEffect + "Respect Effect: " + this.resEffect
+                + "Business Experience: " + this.exp;
+    }
+
     public Item(int selfEffect, int repEffect, int price) {
         this.selfEffect = selfEffect;
         this.resEffect = repEffect;
