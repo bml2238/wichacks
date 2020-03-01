@@ -2,8 +2,6 @@ package gameplay;
 
 import mechanics.Player;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -112,5 +110,9 @@ public class Event {
         events.add(RUMORED_AFFAIR);
 
         return events;
+    }
+
+    public void getEvent(String name){
+        events.get(Integer.parseInt(name));
     }
 }

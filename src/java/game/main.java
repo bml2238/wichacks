@@ -101,7 +101,10 @@ public class main {
                 String funds = scan.nextLine();
                 if (funds.equals("y")){
                     if (player.getRespect() < 25){
+                        events.getEvent(REDUCED_FUNDING);
 
+                        System.out.println("Your investors aren't confident in your abilities and decide \n" +
+                                "to reduce your funding");
                     }
                 }
             }
