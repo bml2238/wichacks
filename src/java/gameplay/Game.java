@@ -10,10 +10,12 @@ import java.util.ArrayList;
 public class Game {
     private String message = "";
     private double profit = 0;
+    Player player;
 
-    ArrayList<Event> events = Event.createEvents();
+    public Game(Player player) { this.player = player; }
 
-    public Game() {}
+    ArrayList<Event> events = Event.createEvents(player);
+
 
     public String displayPlayerStats(Player p) {
         message = "";
@@ -48,6 +50,12 @@ public class Game {
         return message;
     }
 
+    private Event getEvent(String name) {
+        for(Event e : events) {
+            if(e.name)
+        }
+    }
+
     public String runBusiness(Player p) {
         message = "";
         Business business = p.getBusiness();
@@ -71,7 +79,9 @@ public class Game {
             message += "They refuse.\n";
             return message;
         }
-        if(p.getSelfEsteem() > 80 && Event.isTriggered(events.get(REJECTED_FUNDING))
+
+        if(p.getSelfEsteem() > 80 && Event.isTriggered(events.get())
+            jfdklsf;
 
 
         return message;

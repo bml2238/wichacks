@@ -41,6 +41,9 @@ public class Event {
         this.trigger = trigger;
     }
 
+    /** get event name */
+    public String getName() { return this.name; }
+
     /**
      * check if the event is triggered, called when event criteria have been met
      * @param e the event that may be triggered
@@ -66,6 +69,7 @@ public class Event {
             player.changeMoney(this.penalty);
     }
 
+    /** generates all events into an arraylist */
     public static ArrayList<Event> createEvents(Player player) {
         /*$$$$$$$$$$$$$$$$$ BUYING EVENTS $$$$$$$$$$$$$$$$$*/
         final Event NOT_PRETTY_ENOUGH = new Event("NOT_PRETTY_ENOUGH", .05, -15, true,
