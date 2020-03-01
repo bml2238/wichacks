@@ -14,9 +14,13 @@ public class Game {
 
     public Game(Player player) { this.player = player; }
 
-    ArrayList<Event> events = Event.createEvents(player);
+    ArrayList<Event> events = Event.createEvents(this.player);
 
-
+    /**
+     * generates a string of the player's stats
+     * @param p the player
+     * @return the stats
+     */
     public String displayPlayerStats(Player p) {
         message = "";
         message += "Your name is " + p.getName() + " and you are " + p.getAge() + " years old.\n" +
@@ -41,6 +45,11 @@ public class Game {
         return message;
     }
 
+    /**
+     * generates a string of the player's business's stats
+     * @param p the player who's business is to be evaluated
+     * @return the stats
+     */
     public String displayBusinessStats(Player p) {
         message = "";
         ArrayList<String> stats = p.getBusiness().viewBusiness();
