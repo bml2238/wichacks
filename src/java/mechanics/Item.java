@@ -10,11 +10,11 @@ public class Item {
     public int price;
     public int exp; //business exp
 
-    private HashMap<String, Object> clothing = new HashMap<String, Object>();
-    private HashMap<String, Object> makeup = new HashMap<String, Object>();
-    //private HashMap<String, Integer, Integer> medicine = new HashMap<>(); optional
-    private HashMap<String, Object> menstrualProducts = new HashMap<String, Object>();
-    private HashMap<String, Object> house = new HashMap<String, Object>();
+    private HashMap<String, Object> clothing = new HashMap<>();
+    private HashMap<String, Object> makeup = new HashMap<>();
+    //private HashMap<String, Integer, Integer> medicine = new HashMap<>(); //optional
+    private HashMap<String, Object> menstrualProducts = new HashMap<>();
+    private HashMap<String, Object> house = new HashMap<>();
 
     public Item() {
         this.selfEffect = 0;
@@ -54,10 +54,10 @@ public class Item {
 
     public void setHouseStats(HashMap<String, Object> house)
     {
-        house.put("Studio", new Item(0, 0, (int)Math.random() * 1000 + 600));
-        house.put("Apartment", new Item(0, 0, (int)Math.random() * 1200 + 850));
-        house.put("Condo", new Item(0, 0, (int)Math.random() * 250000 + 100000 ));
-        house.put("House", new Item(0, 0, (int)Math.random() * 500000 + 200000));
-        house.put("Mansion", new Item(100, 100, (int)Math.random() * 5000000 + 1000000));
+        house.put("Studio", new Item(0, 0, (int) (Math.random() * 1000) + 600));
+        house.put("Apartment", new Item(0, 0, (int) (Math.random() * 1200) + 850));
+        house.put("Condo", new Item(0, 0, (int) (Math.random() * 250000) + 100000 ));
+        house.put("House", new Item(0, 0, (int) (Math.random() * 500000) + 200000));
+        house.put("Mansion", new Item(100, 100, (int) (Math.random() * 5000000) + 1000000));
     }
 }
