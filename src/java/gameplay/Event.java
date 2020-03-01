@@ -87,10 +87,7 @@ public class Event {
         /*$$$$$$$$$$$$$$$$$ EMPLOYEE EVENTS $$$$$$$$$$$$$$$$$*/
         final Event EMPLOYEE_QUITS = new Event("EMPLOYEE_QUITS", .4, -10,
                 true, Type.RESPECT, Trigger.EMPLOYEE);
-
         events.add(EMPLOYEE_QUITS);
-
-        final Event E
 
         /*$$$$$$$$$$$$$$$$$ JOB EVENTS $$$$$$$$$$$$$$$$$*/
         final Event REDUCED_FUNDING = new Event("REDUCED_FUNDING", .1, -10, true,
@@ -101,9 +98,13 @@ public class Event {
         events.add(REJECTED_FUNDING);
 
         /*$$$$$$$$$$$$$$$$$ FIRING EVENTS $$$$$$$$$$$$$$$$$*/
+        final Event LOST_THEIR_COOL = new Event("LOST_THEIR_COOL", .5, -5, true,
+                                                Type.SELF_ESTEEM, Trigger.FIRING);
+        events.add(LOST_THEIR_COOL);
         final Event RUMORED_AFFAIR = new Event("RUMORED_AFFAIR", .05, -20, false,
                                                 Type.RESPECT, Trigger.FIRING);
         events.add(RUMORED_AFFAIR);
+
 
 
         return events;
