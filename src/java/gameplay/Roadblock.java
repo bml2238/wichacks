@@ -8,9 +8,9 @@ import java.util.ArrayList;
 public class Roadblock {
 
     /** a roadblock is a timed event */
-    private int String name;
+    private String name;
     private int timeTriggered;
-    private int timeInverval;
+    private int timeInterval;
     private int penalty;
     //private Event event;
     private Type type;
@@ -21,16 +21,16 @@ public class Roadblock {
 
     /** the what causes an effect */
     private enum Effect {
-        USE //decrease number of item
+        USE, //decrease number of item
         PROPERTY //you have to pay for your rent
     }
 
     /** list of roadblocks */
     private ArrayList<Roadblock> roadblocks = new ArrayList<>();
-    private ArrayList<IntervalRoadBlock> intervalRoadblock = new ArrayList();
+    private ArrayList<Roadblock> intervalRoadblock = new ArrayList();
 
     /** roadblock that will occur when reaching a certain time */
-    private Roadblock(String name, int timeTriggered, int pentalty, Type type) {
+    private Roadblock(String name, int timeTriggered, int penalty, Type type) {
         this.name = name;
         this.timeTriggered = timeTriggered;
         //this.event = e;
@@ -38,7 +38,7 @@ public class Roadblock {
     }
 
     /** roadblock that will occur after a certain interval */
-    private IntervalRoadblock(String name, int timeInterval, Type type, Effect effect ) {
+    private void intervalRoadBlock(String name, int timeInterval, Type type, Effect effect) {
         this.name = name;
         this.timeInterval = timeInterval;
         this.type = type;
@@ -47,24 +47,24 @@ public class Roadblock {
     /** creates array of roadblocks */
     public ArrayList<Roadblock> createRoadblocks() {
         /** $$$$$$$$$$$$$$$$$ NO_CHILDREN $$$$$$$$$$$$$$$$$$$$$$*/
-        final Roadblock NO_CHILDREN = new Roadblock("NO_CHILDREN", 228, -20, TYPE.RESPECT);
+        final Roadblock NO_CHILDREN = new Roadblock("NO_CHILDREN", 228, -20, Type.RESPECT);
         roadblocks.add(NO_CHILDREN);
 
         /** $$$$$$$$$$$$$$$$$$$$ BEAUTY STANDARDS $$$$$$$$$$$$$$ */
-        final Roadblock BEAUTY_STANDARDS = new Roadblock("BEAUTY_STANDARDS", 228, -30, TYPE.ESTEEM);
+        final Roadblock BEAUTY_STANDARDS = new Roadblock("BEAUTY_STANDARDS", 228, -30, Type.SELF_ESTEEM);
         roadblocks.add(BEAUTY_STANDARDS);
 
         return roadblocks;
     }
 
     /** creates array of intervaled roadblocks */
-    public ArrayList<IntervalRoadblock> intervalRoadblock = new ArrayList() {
+    public ArrayList<intervalRoadBlock> intervalRoadBlock{
         /** $$$$$$$$$$$$$$$$$ MENSTRUAL CYCLE $$$$$$$$$$$$$$$$$$$$$ */
-        final IntervalRoadblock MENSTRUAL_CYCLE = new IntervalRoadblock("MENSTRUAL CYCLE", 1, TYPE.EFFECT.USE);
+        final intervalRoadBlock MENSTRUAL_CYCLE = new intervalRoadBlock("MENSTRUAL CYCLE", 1, Type.SELF_ESTEEM);
         intervalRoadblock.add(MENSTRUAL_CYCLE);
 
         /** $$$$$$$$$$$$$$$$ PAY RENT $$$$$$$$$$$$$$$$$$$ */
-        final IntervalRoadblock PAY_RENT = new IntervalRoadblock("PAY_RENT", 1, TYPE.MONEY, EFFECT.PROPERTY);
+        final intervalRoadBlock PAY_RENT = new intervalRoadBlock("PAY_RENT", 1, Type.MONEY, Effect.PROPERTY);
         intervalRoadblock.add(PAY_RENT);
 
         return intervalRoadblock;

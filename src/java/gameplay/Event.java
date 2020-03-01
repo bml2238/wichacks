@@ -111,8 +111,6 @@ public class Event {
                                                 Type.RESPECT, Trigger.FIRING);
         events.add(RUMORED_AFFAIR);
 
-
-
         return events;
     }
 }
