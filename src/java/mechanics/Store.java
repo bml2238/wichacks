@@ -1,8 +1,11 @@
 package mechanics;
 
+import java.util.ArrayList;
+
 public class Store {
     private Player player;
     private Business business;
+
 
     public void purchasePersonalItem(Item item){
         if (player.isConfidentEnough(item.selfEffect)){

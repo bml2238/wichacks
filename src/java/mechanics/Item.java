@@ -27,13 +27,11 @@ public class Item {
         this.price = price;
     }
 
-    public void setClothingStats(HashMap<String, Integer> clothing)
-    {
+    public void setClothingStats(HashMap<String, Integer> clothing) {
 
     }
 
-    public void setMakeupStats(HashMap<String, Integer> makeup)
-    {
+    public void setMakeupStats(HashMap<String, Integer> makeup) {
 
     }
 

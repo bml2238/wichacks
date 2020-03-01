@@ -23,10 +23,11 @@ public class Event {
     private enum Type {SELF_ESTEEM, RESPECT, MONEY}
 
     /** what triggered the event */
-    private enum Trigger {BUYING,  //after purchasing an item, either clothing or otherwise
-                          HIRING,  //after hiring a new employee. event can be new employee or reactions of others
-                          FIRING,  //after firing an employee
-                          EMPLOYEE //can be triggered anytime by an employee
+    private enum Trigger {BUYING,   //after purchasing an item, either clothing or otherwise
+                          HIRING,   //after hiring a new employee. event can be new employee or reactions of others
+                          FIRING,   //after firing an employee
+                          EMPLOYEE, //can be triggered anytime by an employee
+                          JOB       //triggered while doing work
                     }
 
     /** event constructor */
@@ -76,6 +77,10 @@ public class Event {
 
         /*$$$$$$$$$$$$$$$$$ EMPLOYEE EVENTS $$$$$$$$$$$$$$$$$*/
 
+
+        /*$$$$$$$$$$$$$$$$$ JOB EVENTS $$$$$$$$$$$$$$$$$*/
+        final Event REJECTED_FUNDING = new Event(.25, -20, true, Type.SELF_ESTEEM, Trigger.JOB);
+        events.add(REJECTED_FUNDING);
 
         /*$$$$$$$$$$$$$$$$$ FIRING EVENTS $$$$$$$$$$$$$$$$$*/
         final Event RUMORED_AFFAIR = new Event(.05, -20, false, Type.RESPECT, Trigger.FIRING);
