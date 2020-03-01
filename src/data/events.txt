@@ -18,5 +18,9 @@ SLUT_SHAMING: if you purchase a revealing piece of clothing, people might talk
 TOO_MANY_GIRLS: if you hire a woman and it causes your gender ratio to be more than 50/50 in favor of women
                 your male employees might start complaining and calling you biased
 
-EMPLOYEE_QUITS: if your business starts to do bad due to the effects of other negative effects, an
+EMPLOYEE_QUITS: if your business starts to do bad due to the effects of other negative events, an
                 employee loses confidence in you and quits
+
+BAD_INVESTMENT_DECISION: you decide to invest in a product you thought would improve your business but instead it
+                         doesn't work
+
