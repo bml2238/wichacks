@@ -96,12 +96,14 @@ public class Business {
 
     public void advertise()
     {
+        businessFunds-=200;
         exp += 200;
     }
 
     public void changeBusinessFunds(int amount){
         this.businessFunds += amount;
     }
+
     public void getFunding(Player player)
     {
         if(player.isConfidentEnough(70))
