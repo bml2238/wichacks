@@ -1,28 +1,27 @@
-Mary Jane-female
-John Doe-male
-Daphne Lilac-female
-Mark Table-male
-Jane Comp-female
-Guy Song-male
-Alexis Barn-female
-Alex Lee-male
-Jill Valentine-female
-Chris Redfield-male
-Sheva Motor-female
-Peter Quill-male
-Scarlet Witch-female
-Captain America-male
-Scarlet Jones-female
-Tony Stark-male
-Jane Grey-female
-Clark Kent-male
+Sarah Nickels-female
+Stephen King-male
+Rainbow Rowell-female
+Frodo Baggins-male
+Cheryl Strayed-female
+Gandalf Grey-male
+J.K. Rowling-female
+Samwise Gamgee-male
+Moira Valentine-female
+Thorin Dwarf-male
+Maggie Banks-female
+Dipper Pines-male
+Mabel Pines-female
+Neo Matrix-male
+Jennifer Jessica-female
+Kyle Hunter-male
+Cindy Kon-female
+Caleb Carnival-male
 .
-A young college grad is eagerly looking for a new job
-A young college grad who seems very proud of their accomplishments
-A young self taught person who is eagerly looking for a new job
-A young self taught person who seems very proud of their accomplishments
-A young person looking into a new industry
-A young person who was previously fired
-A young person looking for a new company
-A young person who is eagerly looking for a new job
+An older person eagerly looking for a new job
+An older person with a master's degree is looking to be hired here
+An older person still in college looking for a part time job
+An older person who recently got fired
+An older person looking into a new industry
+An older person looking for a new company
 .
+2

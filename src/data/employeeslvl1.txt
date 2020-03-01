@@ -17,7 +17,7 @@ Tony Stark-male
 Jane Grey-female
 Clark Kent-male
 .
-A young college grad is eagerly looking for a new job
+A young college grad eagerly looking for a new job
 A young college grad who seems very proud of their accomplishments
 A young self taught person who is eagerly looking for a new job
 A young self taught person who seems very proud of their accomplishments
@@ -25,4 +25,6 @@ A young person looking into a new industry
 A young person who was previously fired
 A young person looking for a new company
 A young person who is eagerly looking for a new job
+A young person with no experience looking for their first job
 .
+1
