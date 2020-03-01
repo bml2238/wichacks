@@ -90,12 +90,16 @@ public class main {
             }
 
 
+
+
             /** if player has a condo or apartment, every month, they will charge a fee */
             if (player.getProperty() == "Condo" || player.getProperty() == "Apartment") {
                 Random random = new Random();
                 int rent = random.nextInt(1000);
+                System.out.println("Player money: " +player.getMoney());
                 System.out.println("Time to pay rent, you owe: " + rent);
-                System.out.println("Player money: " + player.getMoney() + "\n \t-" + player.changeMoney(-rent));
+                player.changeMoney(-rent);
+                System.out.println("Player money: " + player.getMoney());
             }
 
             /** after a certain time has passed, then your status will chance */
@@ -108,21 +112,21 @@ public class main {
     }
 
     public void checkAction(String action) throws FileNotFoundException {
-        if (action.equals("Business")) {
+        if (action.toLowerCase().equals("business")) {
             Business business = new Business(Business.Type.TECHNOLOGY);
             Employee employee = new Employee();
-            String employees = business.buildAllPossibleEmployees();
+//            String employees = business.buildAllPossibleEmployees();
             System.out.println("View Business \n Work Month \n View Employees \n Hire Employees \nGo for Business Deal");
-            if (scan.nextLine().equals("View Business")) {
+            if (scan.nextLine().toLowerCase().equals("View Business")) {
                 business.viewBusiness();
             }
-            if (scan.nextLine().equals("Work Month")) {
+            if (scan.nextLine().toLowerCase().equals("Work Month")) {
 
             }
-            if (scan.nextLine().equals("View Employees")) {
+            if (scan.nextLine().toLowerCase().equals("View Employees")) {
 
             }
-            if (scan.nextLine().equals("Hire Employees")) {
+            if (scan.nextLine().toLowerCase().equals("Hire Employees")) {
                 business.lookAtHires();
                 System.out.println("Which employee would you like to hire? ");
                 String name = scan.nextLine();
