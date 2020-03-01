@@ -26,7 +26,7 @@ public class Controller {
         String usermessage = text.getText();
         sentmsgs[btleopened] = usermessage;
         //ifrulesaremet
-        if(Message.checkrules(text, missed,bottlenow) == 0)
+        if(true)
         {
             points = points - 50;
             return;
@@ -97,10 +97,11 @@ public class Controller {
                     //setanimation
                     openedbtles[bottle] = bottle;
                     bottlenow++;
-                    String[] botrles = Message.setRules(bottle + 2, bottle);
+                    String[] botrles;
+                    //String[] botrles = Message.setRules(bottle + 2, bottle);
                     String rulestring = "Bottle Rules \n";
-                    for (int i = 0; i < botrles.length; i++) {
-                        rulestring = rulestring + botrles[i] + "\n";
+                    for (int i = 0; i < 3; i++) {
+                        rulestring = rulestring + "\n";
                     }
                     rulelist.setText(rulestring);
                     on = true;

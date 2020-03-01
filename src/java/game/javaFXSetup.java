@@ -6,19 +6,18 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import mechanics.Business;
+import mechanics.Player;
 
 import java.io.IOException;
-public class javaFXSetup {
-
-
-
-    public class Main extends Application {
+public class javaFXSetup extends Application {
 
         Scene scene1, scenebtwn, scene2, scene3, scene4, scene5;
+        Player player;
         //add the police song message in a bottle or one of the instrumentals or both?
         @Override
         public void start(Stage primaryStage)throws Exception {
-            primaryStage.setTitle("Message In A Bottle");
+            primaryStage.setTitle("WeWork");
             Label desc = new Label();
             Label timer = new Label("Timer \n Starting Now!");
             timer.setId("timer");
@@ -26,12 +25,12 @@ public class javaFXSetup {
             Label funds = new Label();
             funds.relocate(10,625);
             funds.setId("funds");
-            funds.setText("Funds: " + Controller.getfunds());
+            funds.setText("Funds: " + player.getBusiness().getBusinessFunds());
 //Scene 1
             Pane layout1 = new Pane();
-            Label opening = new Label("Message In A Bottle");
+            Label opening = new Label("WeWork");
             Button start = new Button("Start");
-            opening.relocate(300,300);
+            opening.relocate(440,300);
             start.relocate(450,550);
             start.setOnAction(event -> primaryStage.setScene(scenebtwn));
             layout1.getChildren().addAll(opening, start);
@@ -41,8 +40,8 @@ public class javaFXSetup {
             layout1.setId("s1");
 
             Pane layoutbtwn = new Pane();
-            Label instructions = new Label("You and your friend are looking for treasure! \n Click the next bottle to read its message rules. \n Send messages according to the rules and \n figure out the location of the treasure! \n If you don't follow the rules to write the message, \n you need to pay for the wasted paper. \n If you run out of time or funds, it will be harder \n to find the treasure.");
-            Button setoff = new Button("Set off!");
+            Label instructions = new Label("You have just quit because of your sexist boss. \n You plan to start your own business instead! \n Hire and fire employees and deal with their \n situations. Invest in items from the store or \n advertisements to boost stats. \n Try to get your business to the top!");
+            Button setoff = new Button("Let's go!");
             instructions.relocate(250,100);
             setoff.relocate(450,550);
             setoff.setOnAction(event -> primaryStage.setScene(scene2));
@@ -224,4 +223,3 @@ public class javaFXSetup {
 
     }
 
-}

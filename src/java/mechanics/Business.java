@@ -140,6 +140,11 @@ public class Business {
         buildAllPossibleEmployees();
     }
 
+    public int getBusinessFunds()
+    {
+        return this.businessFunds;
+    }
+
     public int getLevel()
     {
         return this.level;
