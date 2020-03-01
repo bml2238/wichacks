@@ -14,6 +14,11 @@ public class Employee {
     private int age;
     private int level = 1;
 
+    public Employee()
+    {
+        new Employee("Name", "female","desc",1);
+    }
+
     public Employee(String name, String gender, String desc, int level)
     {
         this.name = name;
