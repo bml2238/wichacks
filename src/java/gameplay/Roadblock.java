@@ -12,7 +12,7 @@ public class Roadblock {
     private Event event;
 
     /** list of roadblocks */
-    ArrayList<Roadblock> roadblocks = new ArrayList<>();
+    private ArrayList<Roadblock> roadblocks = new ArrayList<>();
 
     private Roadblock(int timeTriggered, Event e) {
         this.timeTriggered = timeTriggered;
@@ -20,7 +20,7 @@ public class Roadblock {
     }
 
     public ArrayList<Roadblock> createRoadblocks() {
-        /**
+        /** */
 
         return roadblocks;
     }

@@ -32,7 +32,7 @@ public class Player{
         this.age = 21;
         this.respect = 50;
         this.selfEsteem = 50;
- //       this.inventory
+        this.inventory = null;
     }
 
     public Player(String n, double income, double money) {

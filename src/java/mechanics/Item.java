@@ -31,11 +31,11 @@ public class Item {
 
     public void setClothingStats(HashMap<String, Object> clothing)
     {
-        clothing.put("Dress", Item(0,0,0));
-        clothing.put("Revealing Dress", 0, 0, 0))
-        clothing.put("Skin Tight Pink Body Suit", Item(100, 100, 29.99)); //Ultimate respect and ultimate self confidence
-        clothing.put("High Heels", Item(5, 5, 50));
-        clothing.put("Gucci Belt", Item(0, 20, 650));
+        clothing.put("Dress", new Item(0,0,0));
+        clothing.put("Revealing Dress", new Item(0, 0, 0));
+        clothing.put("Skin Tight Pink Body Suit", new Item(100, 100, 30)); //Ultimate respect and ultimate self confidence
+        clothing.put("High Heels", new Item(5, 5, 50));
+        clothing.put("Gucci Belt", new Item(0, 20, 650));
 
     public void setClothingStats(HashMap<String, Object> clothing)
     {
