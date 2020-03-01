@@ -1,6 +1,14 @@
 NOT_PRETTY_ENOUGH: even if your confidence level is high enough for this article of clothing you just bought, you
                    still might feel bad
 
+OVERCONFIDENT: you come off too strong in a business deal and scare off the investor.
+
+REDUCED_FUNDING: the investor looks down on you for being a woman and offers half as much as usual. You must be confident
+                 enough to negotiate, or you will have to accept half funding.
+
+REJECTED_FUNDING: the investor looks down on you for being a woman and refuses to offer you any money. You must have a
+                  amount of respect for him to change his mind.
+
 RUMORED_AFFAIR: after you fire a male employee within 5 years of your age, he may spread the rumor that you had an
                 affair that turned out bad and that's why he was fired. you can either try and dispel the
                 rumors or keep quiet
@@ -9,9 +17,3 @@ SLUT_SHAMING: if you purchase a revealing piece of clothing, people might talk
 
 TOO_MANY_GIRLS: if you hire a woman and it causes your gender ratio to be more than 50/50 in favor of women
                 your male employees might start complaining and calling you biased
-
-
-
-
-
-

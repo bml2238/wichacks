@@ -49,7 +49,7 @@ public class Player{
         this.selfEsteem = 50;
         this.inventory = null;
         this.consumables = null;
-        this.property = "Studio"
+        this.property = "Studio";
         this.business = new Business();
     }
 
@@ -73,8 +73,9 @@ public class Player{
     /** changes reputation +/- amount */
     public void changeRespect(int amount) { this.respect += amount; }
 
-    /** changes money +/- amount */
-    public void changeMoney(int amount) { this.money += amount; }
+    public void changeMoney(double amount) {
+        this.money += amount;
+    }
 
     /** changes reputation +/- amount */
     private void changeReputation(int amount) { this.respect += amount; }
