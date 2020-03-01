@@ -101,9 +101,6 @@ public class Business {
     public void changeBusinessFunds(int amount){
         this.businessFunds += amount;
     }
-
-    public void lvlup()
-
     public void getFunding(Player player)
     {
         if(player.isConfidentEnough(70))
@@ -144,6 +141,11 @@ public class Business {
     public double getRatio()
     {
         return genderratio;
+    }
+
+    public void viewBusiness()
+    {
+
     }
 
 

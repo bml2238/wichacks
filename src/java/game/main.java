@@ -1,6 +1,7 @@
 package game;
 
 import gameplay.Event;
+import gameplay.Game;
 import mechanics.Store;
 
 import java.util.ArrayList;
@@ -12,8 +13,12 @@ public class main {
 
         Scanner scan = new Scanner(System.in);
         ArrayList<Event> events = Event.createEvents(); //remember to check events.txt for when they trigger!
+        Game game = new Game();
+        int monthsPassed;
 
         Store store = new Store();
+
+
 
     }
 }
