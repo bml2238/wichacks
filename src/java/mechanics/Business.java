@@ -9,6 +9,7 @@ public class Business {
     private int level;
     private int lvllimit;
     private int exp;
+    private double genderratio;
     private ArrayList<Employee> employees;
 
     public Business()
@@ -46,6 +47,7 @@ public class Business {
     {
         employees.add(emp);
         businessFunds -= emp.getSalary();
+        calculateRatio();
     }
 
     public void fireEmployee(Employee emp)
@@ -72,5 +74,24 @@ public class Business {
     {
         return this.level;
     }
+
+    public void calculateRatio()
+    {
+        double females = 0.0;
+        for(Employee e: employees)
+        {
+            if(e.getGender().equals("female"))
+            {
+                females++;
+            }
+        }
+        this.genderratio = females/employees.size();
+    }
+
+    public double getRatio()
+    {
+        return genderratio;
+    }
+
 
 }

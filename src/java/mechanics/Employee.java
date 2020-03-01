@@ -10,10 +10,14 @@ public class Employee {
     private int salary;
     private int workpoints;
     private static ArrayList<String> situations;
+    private String gender;
+    private int age;
 
-    public Employee(String name, int salary, String desc, int rating, int workpoints)
+    public Employee(String name, String gender, int age, int salary, String desc, int rating, int workpoints)
     {
+        this.gender = gender;
         this.name = name;
+        this.age = age;
         this.salary = salary;
         this.desc = desc;
         this.rating = rating;
@@ -25,6 +29,11 @@ public class Employee {
         return this.name;
     }
 
+    public String getGender()
+    {
+        return this.gender;
+    }
+
     public int getSatisfaction()
     {
         return this.satisfaction;
@@ -33,6 +42,10 @@ public class Employee {
     public String getDesc()
     {
         return this.desc;
+    }
+
+    public int getAge()
+    { return this.age;
     }
 
     public int getSalary()
