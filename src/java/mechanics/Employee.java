@@ -13,15 +13,15 @@ public class Employee {
     private String gender;
     private int age;
 
-    public Employee(String name, String gender, int age, int salary, String desc, int rating, int workpoints)
+    public Employee(String name, String gender, String desc, int level)
     {
         this.gender = gender;
         this.name = name;
-        this.age = age;
-        this.salary = salary;
+        this.age = (int)(Math.random()*((30 - 20) + 1))*level;
+        this.salary = (int)(Math.random()*((1000 - 300) + 1))*level;
         this.desc = desc;
-        this.rating = rating;
-        this.workpoints = workpoints;
+        this.rating = (int)(Math.random()*((10 - 1) + 1));
+        this.workpoints = (int)(Math.random()*((1000 - 300) + 1));
     }
 
     public String getName()
