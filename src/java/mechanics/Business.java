@@ -64,22 +64,27 @@ public class Business {
             }
     }
 
-    public void payEmployee()
+    public double payEmployee()
     {
+        double payroll = 0;
         for(Employee e: employees)
         {
+            payroll += e.getSalary();
             businessFunds -= e.getSalary();
         }
+        return payroll;
     }
 
-    public void workEmployees(Player player)
+    public double workEmployees(Player player)
     {
         for(Employee e: employees)
         {
             businessFunds += e.getSatisfaction() * e.getWorkPoints();
             exp += 10;
         }
-        player.changeMoney((int)(businessFunds*0.03));
+        double profit = businessFunds*0.03;
+        player.changeMoney(profit);
+        return profit;
     }
 
     public void hireEmployee(Employee emp)
@@ -113,13 +118,16 @@ public class Business {
         this.businessFunds += amount;
     }
 
-    public void getFunding(Player player)
+    public double attemptFunding(Player player)
     {
-        if(player.isConfidentEnough(70))
-        {
-            businessFunds += 2000*level;
-            exp += 500;
-        }
+        double amount = (Math.random() * 4) * 2000 + 1000;
+        if(player.getSelfEsteem() > 50)
+            return amount;
+        else //there is always at least a 50% chance of money
+            if((int)(Math.random() * 100) < (50.0 + player.getSelfEsteem()))
+                return amount;
+            else
+                return 0;
     }
 
     public void lvlup() throws FileNotFoundException {

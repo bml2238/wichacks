@@ -10,6 +10,7 @@ import java.util.Scanner;
 public class Event {
 
     /** event stats */
+    private String name;
     private double chance; //chance of event triggering
     private int penalty; //what you will lose
     boolean repeat; //if the event can be triggered multiple times
@@ -31,7 +32,8 @@ public class Event {
                     }
 
     /** event constructor */
-    private Event(double chance, int penalty, boolean repeat, Type type, Trigger trigger) {
+    private Event(String name, double chance, int penalty, boolean repeat, Type type, Trigger trigger) {
+        this.name = name;
         this.chance = chance;
         this.penalty = penalty;
         this.repeat = repeat;
@@ -39,12 +41,15 @@ public class Event {
         this.trigger = trigger;
     }
 
+    /** get event name */
+    public String getName() { return this.name; }
+
     /**
      * check if the event is triggered, called when event criteria have been met
      * @param e the event that may be triggered
      * @return whether or not it triggered
      */
-    public boolean isTriggered(Event e) {
+    public static boolean isTriggered(Event e) {
         double prob = Math.random();
         if(!e.repeat)
             events.remove(e); //an event cannot be triggered twice
@@ -64,26 +69,35 @@ public class Event {
             player.changeMoney(this.penalty);
     }
 
-    public static ArrayList<Event> createEvents() {
+    /** generates all events into an arraylist */
+    public static ArrayList<Event> createEvents(Player player) {
         /*$$$$$$$$$$$$$$$$$ BUYING EVENTS $$$$$$$$$$$$$$$$$*/
-        final Event NOT_PRETTY_ENOUGH = new Event(.05, -15, true, Type.SELF_ESTEEM, Trigger.BUYING);
+        final Event NOT_PRETTY_ENOUGH = new Event("NOT_PRETTY_ENOUGH", .05, -15, true,
+                                                   Type.SELF_ESTEEM, Trigger.BUYING);
         events.add(NOT_PRETTY_ENOUGH);
-        final Event SLUT_SHAMING = new Event(.25, -10, true, Type.RESPECT, Trigger.BUYING);
+        final Event SLUT_SHAMING = new Event("SLUT_SHAMING", .25, -10, true,
+                                              Type.RESPECT, Trigger.BUYING);
         events.add(SLUT_SHAMING);
 
         /*$$$$$$$$$$$$$$$$$ HIRING EVENTS $$$$$$$$$$$$$$$$$**/
-        final Event TOO_MANY_GIRLS = new Event(.3, -10, true, Type.RESPECT, Trigger.HIRING);
+        final Event TOO_MANY_GIRLS = new Event("TOO_MANY_GIRLS", .3, -10, true,
+                                                Type.RESPECT, Trigger.HIRING);
         events.add(TOO_MANY_GIRLS);
 
         /*$$$$$$$$$$$$$$$$$ EMPLOYEE EVENTS $$$$$$$$$$$$$$$$$*/
 
 
         /*$$$$$$$$$$$$$$$$$ JOB EVENTS $$$$$$$$$$$$$$$$$*/
-        final Event REJECTED_FUNDING = new Event(.25, -20, true, Type.SELF_ESTEEM, Trigger.JOB);
+        final Event REDUCED_FUNDING = new Event("REDUCED_FUNDING", .1, -10, true,
+                                                 Type.SELF_ESTEEM, Trigger.JOB);
+        events.add(REDUCED_FUNDING);
+        final Event REJECTED_FUNDING = new Event("REJECTED_FUNDING", .25, -20, true,
+                                                  Type.SELF_ESTEEM, Trigger.JOB);
         events.add(REJECTED_FUNDING);
 
         /*$$$$$$$$$$$$$$$$$ FIRING EVENTS $$$$$$$$$$$$$$$$$*/
-        final Event RUMORED_AFFAIR = new Event(.05, -20, false, Type.RESPECT, Trigger.FIRING);
+        final Event RUMORED_AFFAIR = new Event("RUMORED_AFFAIR", .05, -20, false,
+                                                Type.RESPECT, Trigger.FIRING);
         events.add(RUMORED_AFFAIR);
 
 

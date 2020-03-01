@@ -1,0 +1,7 @@
+PAY_RENT: Every month, you have to pay your rent if you rented an apartment or condo
+
+PROPERTY_TAX: If you have a house, then you have to pay your monthly property tax
+
+TAX_RETURNS: The government looks at your income and takes a percentage off of it
+
+MENSTRUAL_CYCLE: Another month of suffering the menstrual cycle. Your supply goes down by 1.

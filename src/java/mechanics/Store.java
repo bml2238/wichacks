@@ -1,13 +1,7 @@
 package mechanics;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 20540d4b8a9692bb8e2cfe259a78e64648314a3c
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.ArrayList;
-import java.util.Random;
+import javax.swing.plaf.synth.SynthOptionPaneUI;
+import java.util.*;
 
 public class Store {
     private Player player;
@@ -15,31 +9,39 @@ public class Store {
     private Item item;
     private HashMap<String, Item> storeItems = new HashMap<String, Item>();
 
-    public void displayItems(){
-        // display items in store
+    public ArrayList<Item> displayItems(){
+        ArrayList<Item> items = new ArrayList<>();
         for (Item item : storeItems.values()){
-            System.out.println(item);
+            items.add(item);
+        }
+        return items;
+    }
+
+    public void goShopping(){
+        HashMap<String, Item> shoppingCart = new HashMap<>();
+        Scanner sc = new Scanner(System.in);
+        displayItems();
+        System.out.println("What items would you like to buy?");
+        String item = sc.nextLine();
+        while (true){
+            shoppingCart.put(item, storeItems.get(item));
+            System.out.println("Would you like to buy another item? (y/n)");
+            String input = sc.nextLine();
+            if (input.toLowerCase().equals("n")){
+                break;
+            }
+        }
+        for (Item items : shoppingCart.values()){
+            purchasePersonalItem(shoppingCart.get(items));
         }
     }
 
-    @Override
-    public String toString(){
-        return "Price" + item.price + "Self Effect: " + item.selfEffect + "Respect Effect: " + item.resEffect
-                + "Business Experience" + item.exp;
-    }
-
-    public HashSet<Item> void addToShoppingCart(int itemsWanted, String item){
-        // amount of items they're buying
-        HashSet<Item> shoppingCart = new HashSet<>();
-        while (shoppingCart.size() < itemsWanted){
-            shoppingCart.add(storeItems.get(item);
-        }
-        while (shoppingCart.size() > 0) {
-//            Item itemsInCart = shoppingCart.remove(item);
-//            purchasePersonalItem(itemsInCart);
+    /** a copy of goShopping() where the desired items are finite */
+    public void goFiniteShopping(ArrayList<Item> items){
+        for (Item item : items){
+            purchasePersonalItem(item);
         }
     }
-
 
     public void purchasePersonalItem(Item item){
         if (player.isConfidentEnough(item.selfEffect)){
@@ -62,15 +64,15 @@ public class Store {
         business.changeBusinessFunds(-item.price);
     }
 
-//    public void upgradeHouse(){
-//        Item house = null;
-//        int selfEsteem = player.changeSelfEsteem(house.selfEffect);
-//        if (player.getRespect() % business.getLevel() == 0){
-//            house.setHouseStats("house", player.changeSelfEsteem(house.selfEffect * 5),
-//                    player.changeRespect(house.repEffect * 2));
-//
-//        }
-//
-//    }
+    /** whether or not you can upgrade the house */
+    public boolean upgradeHouse(String property){
+        if (business.getLevel() >= 25 && business.getLevel() < 75){
+            player.changeProperty(property);
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 
 }
