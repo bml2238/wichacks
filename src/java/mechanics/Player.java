@@ -53,21 +53,17 @@ public class Player{
     public void changeSelfEsteem(int amount) { this.selfEsteem += amount; }
 
     /** changes reputation +/- amount */
-<<<<<<< HEAD:src/java/game/Player.java
-    public void changeReputation(int amount) { this.reputation += amount; }
+    public void changeRespect(int amount) { this.respect += amount; }
 
     public void changeMoney(int amount) {
         this.money += amount;
     }
-=======
+
     private void changeReputation(int amount) { this.respect += amount; }
->>>>>>> fe02542140a08d27584138cf03776cc10422d3b1:src/java/mechanics/Player.java
 
     /** raises/lowers player income by percent */
     public void raise(double percent) { this.income *= percent; }
 
-<<<<<<< HEAD:src/java/game/Player.java
-=======
     public void purchaseClothing(Item item) {
         if(this.isConfidentEnough(item.repEffect))
             this.respect += item.repEffect;
@@ -77,7 +73,6 @@ public class Player{
         this.money -= item.price;
     }
 
->>>>>>> fe02542140a08d27584138cf03776cc10422d3b1:src/java/mechanics/Player.java
     public boolean isConfidentEnough(int level) {
         return respect > level;
     }
