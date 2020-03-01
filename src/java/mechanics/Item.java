@@ -37,8 +37,8 @@ public class Item {
         clothing.put("Dress", new Item(10, 10, 100));
         clothing.put("Revealing Dress", new Item(20, 0, 200));
         clothing.put("Skin Tight Pink Body Suit", new Item(100, 100, 30)); //Ultimate respect and ultimate self confidence
-        clothing.put("High Heels", new Item(5, 5, 50));
-        clothing.put("Gucci Belt", new Item(0, 20, 650));
+        clothing.put("Casual Formal Attire", new Item(10, 20, 100));
+        clothing.put("Gucci Belt", new Item(0, 50, 650));
     }
 
     public void setMakeupStats(HashMap<String, Object> makeup)

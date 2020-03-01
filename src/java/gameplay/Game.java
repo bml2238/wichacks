@@ -11,6 +11,7 @@ import java.util.Objects;
 public class Game {
     private String message = "";
     private double profit = 0;
+    private int monthsPassed = 0;
     Player player;
 
     public Game(Player player) { this.player = player; }
@@ -46,6 +47,10 @@ public class Game {
         return message;
     }
 
+    /** Time moves forward 1 month */
+    public int passTime() {
+        return monthsPassed += 1;
+    }
 
     /** searches through events and returns the requested event */
     private Event getEvent(String name) {
