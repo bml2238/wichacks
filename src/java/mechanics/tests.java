@@ -1,5 +1,7 @@
 package mechanics;
 
+import gameplay.Game;
+
 import java.util.Scanner;
 
 public class tests {
@@ -8,11 +10,13 @@ public class tests {
         System.out.println("Enter a name");
 
         String name = scan.next();
+        Game game = new Game();
 
         //name, income, money, age, reputation, self esteem
-        Player woman = new Player(name, 10, 500);
+        Player woman = new Player("Woman", 10, 500);
+        System.out.println(game.displayStats(woman));
 
-        System.out.println("Your name is " + woman.getName());
+/*        System.out.println("Your name is " + woman.getName());
         System.out.println("Your self-esteem is " + woman.getSelfEsteem());
 
         Item shirt = new Item(20, 20, 50);
@@ -27,7 +31,7 @@ public class tests {
             woman.purchaseClothing(shirt);
 
         System.out.println("You have $" + woman.getMoney());
-        System.out.println("Your self esteem is " + woman.getSelfEsteem());
+        System.out.println("Your self esteem is " + woman.getSelfEsteem());*/
 
 
     }
