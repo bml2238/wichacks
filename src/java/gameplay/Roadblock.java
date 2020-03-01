@@ -17,7 +17,7 @@ public class RoadBlock {
     private Effect effect; //what you have that causes a trigger
 
     /** the value that going to be modified */
-    private enum Type {SELF_ESTEEM, RESPECT, MONEY};
+    private enum Type {SELF_ESTEEM, RESPECT, MONEY}
 
     /** the what causes an effect */
     private enum Effect {
@@ -30,17 +30,10 @@ public class RoadBlock {
     private ArrayList<RoadBlock> intervalRoadBlock = new ArrayList<>();
 
     /** roadblock that will occur when reaching a certain time */
-    private RoadBlock(String name, int timeTriggered, int penalty, Type type) {
+    public RoadBlock(String name, int timeTriggered, int penalty, Type type) {
         this.name = name;
         this.timeTriggered = timeTriggered;
         //this.event = e;
-        this.type = type;
-    }
-
-    /** roadblock that will occur after a certain interval */
-    private intervalRoadBlock(String name, int timeInterval, Type type, Effect effect) {
-        this.name = name;
-        this.timeInterval = timeInterval;
         this.type = type;
     }
 
@@ -56,18 +49,4 @@ public class RoadBlock {
 
         return roadblocks;
     }
-
-    /** creates array of intervaled roadblocks */
-    public ArrayList<RoadBlock> intervalRoadBlock{
-        /** $$$$$$$$$$$$$$$$$ MENSTRUAL CYCLE $$$$$$$$$$$$$$$$$$$$$ */
-        final intervalRoadBlock MENSTRUAL_CYCLE = new intervalRoadBlock("MENSTRUAL CYCLE", 1, Type.SELF_ESTEEM);
-        intervalRoadblock.add(MENSTRUAL_CYCLE);
-
-        /** $$$$$$$$$$$$$$$$ PAY RENT $$$$$$$$$$$$$$$$$$$ */
-        final intervalRoadBlock PAY_RENT = new intervalRoadBlock("PAY_RENT", 1, Type.MONEY, Effect.PROPERTY);
-        intervalRoadblock.add(PAY_RENT);
-
-        return intervalRoadblock;
-    }
-
 }
