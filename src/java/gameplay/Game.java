@@ -59,6 +59,12 @@ public class Game {
         return null; //it /shouldn't/ reach this, but whatever
     }
 
+    //TODO: test
+    /**
+     * the monthly tasks for the business ran automatically
+     * @param p player
+     * @return the monthly business statement
+     */
     public String runBusiness(Player p) {
         message = "";
         Business business = p.getBusiness();
@@ -74,11 +80,16 @@ public class Game {
         return message;
     }
 
+    /**
+     * ask for funding from investors, check for triggered events, return amount
+     * @param p the player
+     * @return the message for funding
+     */
     public String getFunding(Player p) {
         message = "You ask investors for funding.\n";
         Business business = p.getBusiness();
         double amount = business.attemptFunding(p);
-        if(amount > 0) {
+        if(amount < 1) {
             message += "They refuse.\n";
             return message;
         }
@@ -94,11 +105,21 @@ public class Game {
         }
 
         //possible triggered event "reduced funding"
-        if(Event.isTriggered(getEvent("REDUCED_FUNDING"))) {
+        else if(Event.isTriggered(getEvent("REDUCED_FUNDING"))) {
             message += "The investors don't seem very fond of you--or women in general.\n" +
                         "They offer half as much as usual.\n";
             amount = amount/2;
         }
+
+        else {
+            message += "They agree.\n";
+        }
+
+        //remove excess decimals
+        int trunc = (int)(amount * 100);
+        amount = (double)(trunc)/100;
+
+        message += "You receive $" + amount;
 
         business.changeBusinessFunds((int)amount);
 

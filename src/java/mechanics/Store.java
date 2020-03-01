@@ -36,8 +36,8 @@ public class Store {
             }
         }
         while (shoppingCart.size() > 0) {
-            Item itemsInCart = shoppingCart.remove(item);
-            purchasePersonalItem(itemsInCart);
+//            Item itemsInCart = shoppingCart.remove(item);
+//            purchasePersonalItem(itemsInCart);
         }
     }
 

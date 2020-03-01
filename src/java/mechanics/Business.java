@@ -120,7 +120,7 @@ public class Business {
 
     public double attemptFunding(Player player)
     {
-        double amount = (Math.random() * 40) * 2000 + 1000;
+        double amount = (Math.random() * 4) * 2000 + 1000;
         if(player.getSelfEsteem() > 50)
             return amount;
         else //there is always at least a 50% chance of money
