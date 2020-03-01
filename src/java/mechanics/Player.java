@@ -37,7 +37,7 @@ public class Player{
         this.selfEsteem = 50;
         this.inventory = null;
         this.consumables = null;
-        this.property = "Studio"
+        this.property = "Studio";
     }
 
     public Player(String n, double income, double money) {

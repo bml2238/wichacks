@@ -8,7 +8,6 @@ public class Store {
     private Business business;
     private Item item;
     private HashMap<String, Item> storeItems = new HashMap<String, Item>();
-    private static final String NEGATIVE_RESPECT_CHANGE = "People lost respect for you";
 
     public void displayItems(){
         for (Item item : storeItems.values()){
@@ -49,7 +48,7 @@ public class Store {
         else {
             player.changeSelfEsteem(-item.selfEffect);
             player.changeRespect(-item.resEffect);
-            System.out.println(NEGATIVE_RESPECT_CHANGE + "-" + item.resEffect);
+            System.out.println();
         }
         player.changeMoney(-item.price);
     }
