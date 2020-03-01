@@ -90,8 +90,6 @@ public class Event {
 
         events.add(EMPLOYEE_QUITS);
 
-        final Event E
-
         /*$$$$$$$$$$$$$$$$$ JOB EVENTS $$$$$$$$$$$$$$$$$*/
         final Event REDUCED_FUNDING = new Event("REDUCED_FUNDING", .1, -10, true,
                                                  Type.SELF_ESTEEM, Trigger.JOB);
@@ -109,12 +107,7 @@ public class Event {
         return events;
     }
 
-    // ridicule from males for certain items you're wearing
-    // making a bad business decision (like investment in a shady co.) that could result in losing employees and money
     /** increased difficulty of game? making it harder to get respect and employees making you
     work harder, in turn making you more successful */
-    // lack of effort from employees ... resulting in ?
-    // upgrading business or house if respect & business level is high enough
-
 
 }
