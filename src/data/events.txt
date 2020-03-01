@@ -1,20 +1,3 @@
-TO CREATE AN EVENT: please put it in this exact format, each entry followed by a comma unless otherwise stated
-    1) please put the name in all caps with underscores followed by a :
-    2) put a description of the event in brackets and what specifics trigger it []
-    3) in all caps, put the trigger. trigger categories are found in Events.
-    4) put true/false if you have a choice or if the event just happens
-    5) put the trait that the event affects
-    6) put the number of trait points lost/gained
-    7) IF there is a choice, put the number of choices then repeat 5 and 6 for each choice
-    8) if a choice has a percent chance of working, put the percent in () with the failure and success points
-           surrounding it. Ex. -10 (.6) +20
-    9) put the percent change (in decimal format) of the event occurring and surround it with '$'
-
-feel free to alphabetize the events
-
-put events AFTER this mark!!! otherwise they will not be read
-$$$
-
 NOT_PRETTY_ENOUGH: even if your confidence level is high enough for this article of clothing you just bought, you
                    still might feel bad
 
