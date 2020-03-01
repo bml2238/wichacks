@@ -84,13 +84,27 @@ public class main {
             }
             System.out.println("Day: " + month + " " + year);
             yearInc += 1;
-            if (month == "December") {
+            if (month.equals("December")) {
                 year += 1;
                 yearInc = 1;
             }
 
-            System.out.println("What do you want to do?: ");
+            System.out.println("What do you want to do? (Shop, Meet with Investor): ");
             String action = scan.nextLine();
+
+            if (action.toLowerCase().equals("shop")){
+                store.goShopping();
+            }
+
+            if (action.toLowerCase().equals("meet with investor")){
+                System.out.print("Would you like to gain more funding (y/n)?: ");
+                String funds = scan.nextLine();
+                if (funds.equals("y")){
+                    if (player.getRespect() < 25){
+
+                    }
+                }
+            }
 
             /** if player has a condo or apartment, every month, they will charge a fee */
             if (player.getProperty() == "Condo" || player.getProperty() == "Apartment") {

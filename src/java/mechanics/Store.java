@@ -11,7 +11,6 @@ public class Store {
     private ArrayList<Item> storeItems = new ArrayList<>();
 
     public ArrayList<Item> addItems(){
-        // changed name because fcn was changed to add items instead
         ArrayList<Item> items = new ArrayList<>();
         for (Item item : storeItems){
             items.add(item);
@@ -20,7 +19,6 @@ public class Store {
     }
 
     public void displayItems(){
-        // you still need to use something print out the items though
         for (Item item: storeItems){
             System.out.println(item);
         }
@@ -30,6 +28,7 @@ public class Store {
         ArrayList<Item> shoppingCart = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
         displayItems();
+        System.out.println("Going to the store ... ");
         System.out.println("What items would you like to buy?");
         String item = sc.nextLine();
         while (true) {
@@ -43,7 +42,7 @@ public class Store {
         for (Item value : shoppingCart) {
             purchasePersonalItem(value);
         }
-        System.out.println("Purchase done! Have a good day");
+        System.out.println("Purchase done! Have a good day\n");
     }
 
     /** a copy of goShopping() where the desired items are finite */

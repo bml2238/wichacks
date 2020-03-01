@@ -98,7 +98,7 @@ public class Event {
                                                   Type.SELF_ESTEEM, Trigger.JOB);
         events.add(REJECTED_FUNDING);
 
-        final Event BAD_INVESTMENT_DECISION = new Event("BAD_INVESTMENT", .2, -5,
+        final Event BAD_INVESTMENT_DECISION = new Event("BAD_INVESTMENT", .2, -500,
                 true, Type.MONEY, Trigger.JOB);
 
         events.add(BAD_INVESTMENT_DECISION);
