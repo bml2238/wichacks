@@ -1,5 +1,7 @@
 package gameplay;
 
+import mechanics.Player;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -14,7 +16,8 @@ public class Event {
     private Type type;
     private Trigger trigger;
 
-    private ArrayList<Event> events;
+    /** list of events */
+    private static ArrayList<Event> events = new ArrayList<>();
 
     /** what you will lose it from */
     private enum Type {SELF_ESTEEM, RESPECT, MONEY}
@@ -35,6 +38,11 @@ public class Event {
         this.trigger = trigger;
     }
 
+    /**
+     * check if the event is triggered, called when event criteria have been met
+     * @param e the event that may be triggered
+     * @return whether or not it triggered
+     */
     public boolean isTriggered(Event e) {
         double prob = Math.random();
         if(!e.repeat)
@@ -42,7 +50,20 @@ public class Event {
         return(e.chance > prob);
     }
 
-    public ArrayList<Event> createEvents() {
+    /**
+     * the event triggered, now have it affect the player
+     * @param player the player effected
+     */
+    public void affected(Player player) {
+        if(this.type == Type.RESPECT)
+            player.changeRespect(this.penalty);
+        else if(this.type == Type.SELF_ESTEEM)
+            player.changeRespect(this.penalty);
+        else
+            player.changeMoney(this.penalty);
+    }
+
+    public static ArrayList<Event> createEvents() {
         /*$$$$$$$$$$$$$$$$$ BUYING EVENTS $$$$$$$$$$$$$$$$$*/
         final Event NOT_PRETTY_ENOUGH = new Event(.05, -15, true, Type.SELF_ESTEEM, Trigger.BUYING);
         events.add(NOT_PRETTY_ENOUGH);
