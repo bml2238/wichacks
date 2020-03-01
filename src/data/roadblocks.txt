@@ -1,7 +1,13 @@
+
+NO_CHILDREN (approx 40 years old): Because you're old and you don't have a family, people will shame you for not
+                                    having children.
+
+BEAUTY_STANDARDS (approx 35 years old): You're loosing your previous youth and beauty. Men aren't going to respect
+                                        you as much
+
+-------------------------------
+INTERVAL
+
 PAY_RENT: Every month, you have to pay your rent if you rented an apartment or condo
-
-PROPERTY_TAX: If you have a house, then you have to pay your monthly property tax
-
-TAX_RETURNS: The government looks at your income and takes a percentage off of it
 
 MENSTRUAL_CYCLE: Another month of suffering the menstrual cycle. Your supply goes down by 1.

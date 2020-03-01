@@ -30,7 +30,7 @@ public class Roadblock {
 
 
     public ArrayList<Roadblock> createRoadblocks() {
-        /** $$$$$$$$$$$$$$$$$ TAXES $$$$$$$$$$$$$$$$$$$$$$*/
+        /** $$$$$$$$$$$$$$$$$  $$$$$$$$$$$$$$$$$$$$$$*/
 
 
         return roadblocks;
