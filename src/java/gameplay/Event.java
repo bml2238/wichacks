@@ -11,6 +11,7 @@ public class Event {
 
     /** event stats */
     private double chance; //chance of event triggering
+    private double chanceMod = 1 //will affect the chance of an event occuring
     private int penalty; //what you will lose
     boolean repeat; //if the event can be triggered multiple times
     private Type type;
@@ -64,12 +65,20 @@ public class Event {
             player.changeMoney(this.penalty);
     }
 
-    public static ArrayList<Event> createEvents() {
+    public static ArrayList<Event> createEvents(Player player) {
         /*$$$$$$$$$$$$$$$$$ BUYING EVENTS $$$$$$$$$$$$$$$$$*/
         final Event NOT_PRETTY_ENOUGH = new Event(.05, -15, true, Type.SELF_ESTEEM, Trigger.BUYING);
         events.add(NOT_PRETTY_ENOUGH);
-        final Event SLUT_SHAMING = new Event(.25, -10, true, Type.RESPECT, Trigger.BUYING);
+
+        for (String item : player.getInventory()){
+            if (item == "Revealing Dress")
+            {
+                chanceMod = chanceMod + .1;
+            }
+        }
+        final Event SLUT_SHAMING = new Event(.25 * chanceMod, -10, true, Type.RESPECT, Trigger.BUYING);
         events.add(SLUT_SHAMING);
+        chanceMod = 0;
 
         /*$$$$$$$$$$$$$$$$$ HIRING EVENTS $$$$$$$$$$$$$$$$$**/
         final Event TOO_MANY_GIRLS = new Event(.3, -10, true, Type.RESPECT, Trigger.HIRING);
