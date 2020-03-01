@@ -1,4 +1,5 @@
 package game;
+
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
@@ -6,220 +7,265 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import mechanics.Business;
-import mechanics.Player;
 
+import java.awt.*;
 import java.io.IOException;
+
 public class javaFXSetup extends Application {
 
-        Scene scene1, scenebtwn, scene2, scene3, scene4, scene5;
-        Player player;
-        //add the police song message in a bottle or one of the instrumentals or both?
-        @Override
-        public void start(Stage primaryStage)throws Exception {
-            primaryStage.setTitle("WeWork");
-            Label desc = new Label();
-            Label timer = new Label("Timer \n Starting Now!");
-            timer.setId("timer");
-            timer.relocate(100,550);
-            Label funds = new Label();
-            funds.relocate(10,625);
-            funds.setId("funds");
-            funds.setText("Funds: " + player.getBusiness().getBusinessFunds());
+    Scene scene1, scenebtwn, scene2, scene3, businessPage, housePage, storePage, scene4, scene5;
+    //add the police song message in a bottle or one of the instrumentals or both?
+    @Override
+    public void start(Stage primaryStage)throws Exception {
+        primaryStage.setTitle("We Work");
+        Label desc = new Label();
+        Label timer = new Label("Action Desc!");
+        timer.setId("timer");
+        timer.relocate(100,550);
+        Label funds = new Label();
+        funds.relocate(10,625);
+        funds.setId("funds");
+        funds.setText("Funds: " + Controller.getfunds());
 //Scene 1
-            Pane layout1 = new Pane();
-            Label opening = new Label("WeWork");
-            Button start = new Button("Start");
-            opening.relocate(440,300);
-            start.relocate(450,550);
-            start.setOnAction(event -> primaryStage.setScene(scenebtwn));
-            layout1.getChildren().addAll(opening, start);
-            opening.setId("op");
-            start.setId("st");
-            scene1= new Scene(layout1, 1200, 800);
-            layout1.setId("s1");
+        Pane titlepage = new Pane();
+        Label opening = new Label("We Work");
+        Button start = new Button("Start");
+        opening.relocate(440,300);
+        start.relocate(450,550);
+        start.setOnAction(event -> primaryStage.setScene(scenebtwn));
+        titlepage.getChildren().addAll(opening, start);
+        opening.setId("op");
+        start.setId("st");
+        scene1= new Scene(titlepage, 1200, 800);
+        titlepage.setId("s1");
 
-            Pane layoutbtwn = new Pane();
-            Label instructions = new Label("You have just quit because of your sexist boss. \n You plan to start your own business instead! \n Hire and fire employees and deal with their \n situations. Invest in items from the store or \n advertisements to boost stats. \n Try to get your business to the top!");
-            Button setoff = new Button("Let's go!");
-            instructions.relocate(250,100);
-            setoff.relocate(450,550);
-            setoff.setOnAction(event -> primaryStage.setScene(scene2));
-            layoutbtwn.getChildren().addAll(instructions,setoff);
-            scenebtwn = new Scene(layoutbtwn, 1200, 800);
-            setoff.setId("stoff");
-            instructions.setId("in");
-            layoutbtwn.setId("sbtwn");
+        Pane intropage = new Pane();
+        Label instructions = new Label("You have just quit because of your sexist boss. \n You plan to start your own business instead! \n Hire and fire employees and deal with their \n situations. Invest in items from the store or \n advertisements to boost stats. \n Try to get your business to the top!");
+        Button setoff = new Button("Let's go!");
+        instructions.relocate(250,100);
+        setoff.relocate(450,550);
+        setoff.setOnAction(event -> primaryStage.setScene(scene2));
+        intropage.getChildren().addAll(instructions,setoff);
+        scenebtwn = new Scene(intropage, 1200, 800);
+        setoff.setId("stoff");
+        instructions.setId("in");
+        intropage.setId("sbtwn");
 //Scene 2
-            Label label2= new Label("This is the second scene");
-            Button button2= new Button("Go to scene 3");
-            button2.setOnAction(event -> primaryStage.setScene(scene3));
+        Label label2= new Label("This is the second scene");
+        Button button2= new Button("Go to scene 3");
+        button2.setOnAction(event -> primaryStage.setScene(scene3));
 
-            //MAINGAMESETUP
-            Button bot1= new Button("BOTTLE1");
-            Button bot2= new Button("BOTTLE2");
-            Button bot3= new Button("BOTTLE3");
-            Button bot4= new Button("BOTTLE4");
-            Button bot5= new Button("BOTTLE5");
-            Button bot6= new Button("BOTTLE6");
-            Button yourship = new Button("");
-            Button theirship = new Button("");
-            Button treasureisland = new Button("");
-            Button bottleinst = new Button("                    \n                     \n                     \n                     \n");
+        //MAINGAMESETUP
+        Button businessbutton= new Button("Business");
+        Button storebutton= new Button("Store");
+        Button homebutton= new Button("Home");
+        Button returnButton= new Button("Return");
+        //Button bot4= new Button("BOTTLE4");
+        //Button bot5= new Button("BOTTLE5");
+        //Button bot6= new Button("BOTTLE6");
+        Button yourship = new Button("");
+        Button theirship = new Button("");
+        Button treasureisland = new Button("");
+        Button bottleinst = new Button("                    \n                     \n                     \n                     \n");
 
-            bot1.setId("b1");
-            bot2.setId("b2");
-            bot3.setId("b3");
-            bot4.setId("b4");
-            bot5.setId("b5");
-            bot6.setId("b6");
+        businessbutton.setId("b1");
+        storebutton.setId("b2");
+        homebutton.setId("b3");
+        //bot4.setId("b4");
+        //bot5.setId("b5");
+        //bot6.setId("b6");
 
-            yourship.setId("yours");
-            theirship.setId("theirs");
-            treasureisland.setId("treasure");
-            bottleinst.setId("btlemain");
-            yourship.relocate(50.0,400.0);
-            theirship.relocate(300.0,100.0);
-            treasureisland.relocate(850,500);
-            bottleinst.relocate(10,550);
-            //bottleinst.resize(1000,100);
-            //ENDOFMAINGAMESETUP
-
-
-            Pane layout2 = new Pane();
-            layout2.getChildren().addAll(funds, label2, button2, bot1, bot2, bot3, bot4, bot5, bot6,yourship,theirship,treasureisland,desc,bottleinst);
-
-            bot1.relocate(215.0,215.0);
-            bot1.resize(70.0,70.0);
-            bot2.relocate(327,365);
-            bot2.resize(70.0,70.0);
-            bot3.relocate(510.0,145.0);
-            bot3.resize(70.0,70.0);
-            bot4.relocate(613.0,338.0);
-            bot4.resize(70.0,70.0);
-            bot5.relocate(792.0,215.0);
-            bot5.resize(70.0,70.0);
-            bot6.relocate(933.0,390.0);
-            bot6.resize(70.0,70.0);
-            layout2.setId("s2");
-
-            desc.resize(1000,200);
-            desc.relocate(100,550);
-            desc.setText("Time to start your voyage! Click on the first bottle.");
-            desc.setId("dsc");
-            Label criteria = new Label("Bottle Rules \n");
-
-            scene2= new Scene(layout2,1200,800);
-
-            bot1.setOnAction(e -> Controller.clickedButton(desc, 1, primaryStage, scene3, bot1, criteria, timer));
-            bot2.setOnAction(e -> Controller.clickedButton(desc, 2, primaryStage, scene3, bot2, criteria, timer));
-            bot3.setOnAction(e -> Controller.clickedButton(desc, 3, primaryStage, scene3, bot3, criteria, timer));
-            bot4.setOnAction(e -> Controller.clickedButton(desc, 4, primaryStage, scene3, bot4, criteria, timer));
-            bot5.setOnAction(e -> Controller.clickedButton(desc, 5, primaryStage, scene3, bot5, criteria, timer));
-            bot6.setOnAction(e -> Controller.clickedButton(desc, 6, primaryStage, scene3, bot6, criteria, timer));
+        yourship.setId("yours");
+        theirship.setId("theirs");
+        treasureisland.setId("treasure");
+        bottleinst.setId("btlemain");
+        yourship.relocate(50.0,400.0);
+        theirship.relocate(300.0,100.0);
+        treasureisland.relocate(850,500);
+        bottleinst.relocate(10,550);
+        //bottleinst.resize(1000,100);
+        //ENDOFMAINGAMESETUP
 
 
-            yourship.setOnAction(e -> Controller.clickedYourShip(desc));
-            theirship.setOnAction(e -> Controller.clickedTheirShip(desc));
-            treasureisland.setOnAction(e -> Controller.clickedIsland(desc));
-            bottleinst.setOnAction(e -> Controller.clickedmain(desc));
+        Pane homescreen = new Pane();
+        homescreen.getChildren().addAll(button2, businessbutton, storebutton, homebutton, desc);
+
+        businessbutton.relocate(800,350);
+        businessbutton.resize(200,200);
+        storebutton.relocate(300,350);
+        storebutton.resize(200,200);
+        homebutton.relocate(550,500);
+        homebutton.resize(200,200);
+        //bot4.relocate(613.0,338.0);
+        //bot4.resize(70.0,70.0);
+        //bot5.relocate(792.0,215.0);
+        //bot5.resize(70.0,70.0);
+        //bot6.relocate(933.0,390.0);
+        //bot6.resize(70.0,70.0);
+        homescreen.setId("s2");
+
+        desc.resize(1000,200);
+        desc.relocate(450,100);
+        desc.setText("Month 1 Of Your Business");
+        desc.setId("dsc");
+        Label criteria = new Label("testthis");
+        Label businesslabel = new Label("My Business \n");
+        Label storelabel = new Label("Items You Can Buy \n");
+        Label houselabel = new Label("My House \n");
+
+        scene2= new Scene(homescreen,1200,800);
+
+        businessbutton.setOnAction(e -> Controller.clickedLocation(desc, "My Business", primaryStage, businessPage));
+        storebutton.setOnAction(e -> Controller.clickedLocation(desc, "Local Store", primaryStage, scene3));
+        homebutton.setOnAction(e -> Controller.clickedLocation(desc, "My House", primaryStage, housePage));
+        returnButton.setOnAction(e -> Controller.clickedLocation(desc, "Month 1 of Your Business", primaryStage, scene2));
+        //bot4.setOnAction(e -> Controller.clickedButton(desc, 4, primaryStage, scene3, bot4, criteria, timer));
+        //bot5.setOnAction(e -> Controller.clickedButton(desc, 5, primaryStage, scene3, bot5, criteria, timer));
+        //bot6.setOnAction(e -> Controller.clickedButton(desc, 6, primaryStage, scene3, bot6, criteria, timer));
+
+
+        //yourship.setOnAction(e -> Controller.clickedStore(desc));
+        //theirship.setOnAction(e -> Controller.clickedHome(desc));
+        //treasureisland.setOnAction(e -> Controller.cli(desc));
+        bottleinst.setOnAction(e -> Controller.clickedmain(desc));
 //Scene 3
-            Label label3 = new Label("This is the third scene");
-            Button button3 = new Button("Go to scene 4");
-            button3.setOnAction(e -> primaryStage.setScene(scene4));
-            Pane layout3 = new Pane();
+        //Label storePage = new Label("This is the third scene");
+        Button button3 = new Button("Go to scene 4");
+        button3.setOnAction(e -> primaryStage.setScene(scene4));
+
+        //TextArea userbox = new TextArea("Start writing your message here!");
+        //Label criteria = new Label("Bottle Rules \n");
+        //userbox.setId("usebx");
+        //desc.resize(1000,200);
+        desc.relocate(450,100);
+        //desc.setText("Store");
+        criteria.setId("crit");
+        Rectangle r = new Rectangle(100, 100, 1366, 1366);
+        //userbox.setWrapText(true);
+        //userbox.relocate(10,50);
+        criteria.relocate(670,50);
+        criteria.resize(300,1100);
+
+        Label missing = new Label("If you make a mistake, you will have to pay 50 coins from your funds to replace the paper. Run out of funds and you won't have enough to keep your crew to find the treasure.");
+        missing.setWrapText(true);
+        missing.setPrefWidth(640);
+        criteria.setPrefWidth(500);
+        missing.relocate(10,300);
+        missing.setId("mss");
+
+        Button makeup= new Button("Makeup");
+        Button revclothing= new Button("Revealing Clothing");
+        Button pinksuit = new Button("Pink Skintight Pantsuit");
+        Button dress = new Button("Dress");
+
+        Pane storelayout = new Pane();
+
+        storelayout.getChildren().addAll(desc, criteria, returnButton, pinksuit, revclothing, dress, makeup, missing, timer);
+        Scene storePage= new Scene(storelayout,1200,800);
+        storelayout.setId("s3");
 
 
-
-            TextArea userbox = new TextArea("Start writing your message here!");
-            //Label criteria = new Label("Bottle Rules \n");
-            userbox.setId("usebx");
-            criteria.setId("crit");
-            userbox.setWrapText(true);
-            userbox.relocate(10,50);
-            criteria.relocate(670,50);
-            criteria.resize(300,1100);
-
-            Label missing = new Label("If you make a mistake, you will have to pay 50 coins from your funds to replace the paper. Run out of funds and you won't have enough to keep your crew to find the treasure.");
-            missing.setWrapText(true);
-            missing.setPrefWidth(640);
-            criteria.setPrefWidth(500);
-            missing.relocate(10,300);
-            missing.setId("mss");
-
-            //Scene 4
-            Label label4 = new Label("This is the fourth scene");
-            Button button4 = new Button("Go to scene 5");
-            Label end = new Label("This is the end");
-            Button lastbtn = new Button("See Your Story");
-            button4.setOnAction(e -> primaryStage.setScene(scene5));
-            lastbtn.setOnAction(e -> primaryStage.setScene(scene5));
-            end.relocate(200,200);
-            lastbtn.relocate(450,500);
-            end.setId("lastwords");
-            lastbtn.setId("lastbtn");
-            Pane layout4 = new Pane();
-            layout4.getChildren().addAll(label4, button4, lastbtn, end);
-            scene4= new Scene(layout4,1200,800);
-            layout4.setId("s4");
+        //BusinessPage
+        Label buslabel = new Label("This is the third scene");
+        Button button4 = new Button("Go to scene 4");
+        button4.setOnAction(e -> primaryStage.setScene(scene4));
+        Pane buslayout = new Pane();
 
 
-            Label label5 = new Label("This is the fifth scene");
-            Label ending = new Label("endtexthere");
-            ending.setPrefWidth(600);
-            ending.setWrapText(true);
-            ending.setId("ending");
-            Button button5 = new Button("Go to scene 1");
-            button5.setOnAction(e -> primaryStage.setScene(scene1));
-            Pane layout5 = new Pane();
-            layout5.getChildren().addAll(label5, button5, ending);
-            scene5 = new Scene(layout5,1200,800);
-            layout5.setId("s5");
+        //TextArea userbox = new TextArea("Start writing your message here!");
+        //Label criteria = new Label("Bottle Rules \n");
+        //userbox.setId("usebx");
+        //desc.resize(1000,200);
+        desc.relocate(450,100);
+        desc.setText("Store");
+        criteria.setId("crit");
+        //userbox.setWrapText(true);
+        //userbox.relocate(10,50);
+        criteria.relocate(670,50);
+        criteria.resize(300,1100);
 
 
-            Button submitMessage = new Button("Send Message");
-            submitMessage.setId("submsg");
-            submitMessage.setOnAction(e -> Controller.submitmsg(userbox, primaryStage, scene2, ending, missing, desc, funds, end,scene4));
-            submitMessage.relocate(400,550);
-            ending.relocate(100,100);
-            ending.setWrapText(true);
+        Button viewBus= new Button("View Stats");
+        Button viewEmp= new Button("View Employees");
+        Button hireEmp = new Button("Hire Employees");
+        Button makeDeal = new Button("Make Deal");
 
-            layout3.getChildren().addAll(label3, button3, userbox, criteria, submitMessage, missing, timer);
-            scene3= new Scene(layout3,1200,800);
-            layout3.setId("s3");
+        buslayout.getChildren().addAll(viewBus, viewEmp, hireEmp, makeDeal, returnButton, button3, desc, criteria);
+        businessPage= new Scene(buslayout,1200,800);
+        buslayout.setId("s3");
 
-            layout1.getStylesheets().add("/sample/bottlestyle.css");
-            layoutbtwn.getStylesheets().add("/sample/bottlestyle.css");
-            layout2.getStylesheets().add("/sample/bottlestyle.css");
-            layout3.getStylesheets().add("/sample/bottlestyle.css");
-            layout4.getStylesheets().add("/sample/bottlestyle.css");
-            layout5.getStylesheets().add("/sample/bottlestyle.css");
-
-            primaryStage.setScene(scene1);
-            primaryStage.show();
-        }
-
-
-
-
-
+        //Scene 4
+        Label label4 = new Label("This is the fourth scene");
+        //Button button4 = new Button("Go to scene 5");
+        Label end = new Label("This is the end");
+        Button lastbtn = new Button("See Your Story");
+        button4.setOnAction(e -> primaryStage.setScene(scene5));
+        lastbtn.setOnAction(e -> primaryStage.setScene(scene5));
+        end.relocate(200,200);
+        lastbtn.relocate(450,500);
+        end.setId("lastwords");
+        lastbtn.setId("lastbtn");
+        Pane layout4 = new Pane();
+        layout4.getChildren().addAll(label4, button4, lastbtn, end);
+        scene4= new Scene(layout4,1200,800);
+        layout4.setId("s4");
 
 
+        Label label5 = new Label("This is the fifth scene");
+        Label ending = new Label("endtexthere");
+        ending.setPrefWidth(600);
+        ending.setWrapText(true);
+        ending.setId("ending");
+        Button button5 = new Button("Go to scene 1");
+        button5.setOnAction(e -> primaryStage.setScene(scene1));
+        Pane layout5 = new Pane();
+        layout5.getChildren().addAll(label5, button5, ending);
+        scene5 = new Scene(layout5,1200,800);
+        layout5.setId("s5");
 
 
-        //NOTES
-        //Label label1= new Label("This is the first scene"); This contains text. It can be text or an image. Here, a text box is placed and defined as label1 with the quote inside displayed.
-        //Button button1= new Button("Go to scene 2"); This creates a button, the text inside is what will be on it
-        //button1.setOnAction(e -> primaryStage.setScene(scene2)); This sets an action for the button to have. setScene is built in. We have to create new scenes.
-        //VBox layout1 = new VBox(20); This reopens the virtual box, but it keeps it at the same size
-        //layout1.getChildren().addAll(label1, button1); This function adds the label and button as children of the virtual box
-        //scene1= new Scene(layout1, 300, 250); This initializes the first scene. The first scene is the layout with its children and the size is set up.
-        //for the stylesheet to work you gotta add it to the layout and set ids for the things you make here
-        //whatamidoingnow i should start with the third scene, the main game, and make buttons with images of bottles. The buttons will have to work.
-        //plan - first scene title, second instructions, third main game, fourth bottle main game, fifth level results, sixth end game??
-        //either way i can just work on the main game, THEN set it permanently to a scene. Scene for now will be scene #2.
-        //now how in the world do i do this? first - make the buttons and place them second make them do something.
-        //
+        Button submitMessage = new Button("Send Message");
+        submitMessage.setId("submsg");
+        //submitMessage.setOnAction(e -> Controller.submitmsg(userbox, primaryStage, scene2, ending, missing, desc, funds, end,scene4));
+        submitMessage.relocate(400,550);
+        ending.relocate(100,100);
+        ending.setWrapText(true);
 
+
+        titlepage.getStylesheets().add("/sample/bottlestyle.css");
+        intropage.getStylesheets().add("/sample/bottlestyle.css");
+        homescreen.getStylesheets().add("/sample/bottlestyle.css");
+        storelayout.getStylesheets().add("/sample/bottlestyle.css");
+        layout4.getStylesheets().add("/sample/bottlestyle.css");
+        layout5.getStylesheets().add("/sample/bottlestyle.css");
+        //storePage.getStylesheets().add("/sample/bottlestyle.css");
+        //housePage.getStylesheets().add("/sample/bottlestyle.css");
+        buslayout.getStylesheets().add("/sample/bottlestyle.css");
+
+        primaryStage.setScene(scene1);
+        primaryStage.show();
     }
 
+
+
+
+
+
+
+
+
+    //NOTES
+    //Label label1= new Label("This is the first scene"); This contains text. It can be text or an image. Here, a text box is placed and defined as label1 with the quote inside displayed.
+    //Button button1= new Button("Go to scene 2"); This creates a button, the text inside is what will be on it
+    //button1.setOnAction(e -> primaryStage.setScene(scene2)); This sets an action for the button to have. setScene is built in. We have to create new scenes.
+    //VBox layout1 = new VBox(20); This reopens the virtual box, but it keeps it at the same size
+    //layout1.getChildren().addAll(label1, button1); This function adds the label and button as children of the virtual box
+    //scene1= new Scene(layout1, 300, 250); This initializes the first scene. The first scene is the layout with its children and the size is set up.
+    //for the stylesheet to work you gotta add it to the layout and set ids for the things you make here
+    //whatamidoingnow i should start with the third scene, the main game, and make buttons with images of bottles. The buttons will have to work.
+    //plan - first scene title, second instructions, third main game, fourth bottle main game, fifth level results, sixth end game??
+    //either way i can just work on the main game, THEN set it permanently to a scene. Scene for now will be scene #2.
+    //now how in the world do i do this? first - make the buttons and place them second make them do something.
+    //
+
+}
