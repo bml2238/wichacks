@@ -55,22 +55,27 @@ public class Business {
             }
     }
 
-    public void payEmployee()
+    public double payEmployee()
     {
+        double payroll = 0;
         for(Employee e: employees)
         {
+            payroll += e.getSalary();
             businessFunds -= e.getSalary();
         }
+        return payroll;
     }
 
-    public void workEmployees(Player player)
+    public double workEmployees(Player player)
     {
         for(Employee e: employees)
         {
             businessFunds += e.getSatisfaction() * e.getWorkPoints();
             exp += 10;
         }
-        player.changeMoney((int)(businessFunds*0.03));
+        double profit = businessFunds*0.03;
+        player.changeMoney(profit);
+        return profit;
     }
 
     public void hireEmployee(Employee emp)

@@ -64,7 +64,7 @@ public class Player{
     /** changes reputation +/- amount */
     public void changeRespect(int amount) { this.respect += amount; }
 
-    public void changeMoney(int amount) {
+    public void changeMoney(double amount) {
         this.money += amount;
     }
 
