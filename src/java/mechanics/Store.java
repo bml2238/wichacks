@@ -22,22 +22,21 @@ public class Store {
     }
 
     public void goShopping(){
-        HashSet<Item> shoppingCart = new HashSet<>();
+        HashMap<String, Item> shoppingCart = new HashMap<>();
         Scanner sc = new Scanner(System.in);
         displayItems();
         System.out.println("What items would you like to buy?");
         String item = sc.nextLine();
         while (true){
-            shoppingCart.add(storeItems.get(item));
+            shoppingCart.put(item, storeItems.get(item));
             System.out.println("Would you like to buy another item? (y/n)");
             String input = sc.nextLine();
-            if (input.toLowerCase().equals("y")){
+            if (input.toLowerCase().equals("n")){
                 break;
             }
         }
-        while (shoppingCart.size() > 0) {
-//            Item itemsInCart = shoppingCart.remove(item);
-//            purchasePersonalItem(itemsInCart);
+        for (Item items : shoppingCart.values()){
+            purchasePersonalItem(shoppingCart.get(items));
         }
     }
 
@@ -68,7 +67,7 @@ public class Store {
             player.changeProperty(property);
         }
         else {
-
+            System.out.println("You are not successful enough to upgrade your house");
         }
     }
 
