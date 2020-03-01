@@ -75,6 +75,7 @@ public class Event {
         final Event NOT_PRETTY_ENOUGH = new Event("NOT_PRETTY_ENOUGH", .05, -15, true,
                                                    Type.SELF_ESTEEM, Trigger.BUYING);
         events.add(NOT_PRETTY_ENOUGH);
+
         final Event SLUT_SHAMING = new Event("SLUT_SHAMING", .25, -10, true,
                                               Type.RESPECT, Trigger.BUYING);
         events.add(SLUT_SHAMING);
@@ -97,6 +98,11 @@ public class Event {
                                                   Type.SELF_ESTEEM, Trigger.JOB);
         events.add(REJECTED_FUNDING);
 
+        final Event BAD_INVESTMENT_DECISION = new Event("BAD_INVESTMENT", .2, -5,
+                true, Type.MONEY, Trigger.JOB);
+
+        events.add(BAD_INVESTMENT_DECISION);
+
         /*$$$$$$$$$$$$$$$$$ FIRING EVENTS $$$$$$$$$$$$$$$$$*/
         final Event LOST_THEIR_COOL = new Event("LOST_THEIR_COOL", .5, -5, true,
                                                 Type.SELF_ESTEEM, Trigger.FIRING);
@@ -109,8 +115,4 @@ public class Event {
 
         return events;
     }
-
-    /** increased difficulty of game? making it harder to get respect and employees making you
-    work harder, in turn making you more successful */
-
 }
