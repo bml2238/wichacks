@@ -49,6 +49,8 @@ public class Player{
     public double getAge() { return this.age; }
     public String getName() { return this.name; }
 
+    public void age() { this.age++; }
+
     /** changes self esteem +/- amount */
     public void changeSelfEsteem(int amount) { this.selfEsteem += amount; }
 
