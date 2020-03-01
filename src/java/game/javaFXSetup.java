@@ -19,9 +19,9 @@ public class javaFXSetup extends Application {
     public void start(Stage primaryStage)throws Exception {
         primaryStage.setTitle("We Work");
         Label desc = new Label();
-        Label timer = new Label("Action Desc!");
-        timer.setId("timer");
-        timer.relocate(100,550);
+        Label action = new Label("Action Desc!");
+        action.setId("action");
+        action.relocate(100,550);
         Label funds = new Label();
         funds.relocate(10,625);
         funds.setId("funds");
@@ -119,9 +119,9 @@ public class javaFXSetup extends Application {
         storebutton.setOnAction(e -> Controller.clickedLocation(desc, "Local Store", primaryStage, scene3));
         homebutton.setOnAction(e -> Controller.clickedLocation(desc, "My House", primaryStage, housePage));
         returnButton.setOnAction(e -> Controller.clickedLocation(desc, "Month 1 of Your Business", primaryStage, scene2));
-        //bot4.setOnAction(e -> Controller.clickedButton(desc, 4, primaryStage, scene3, bot4, criteria, timer));
-        //bot5.setOnAction(e -> Controller.clickedButton(desc, 5, primaryStage, scene3, bot5, criteria, timer));
-        //bot6.setOnAction(e -> Controller.clickedButton(desc, 6, primaryStage, scene3, bot6, criteria, timer));
+        //bot4.setOnAction(e -> Controller.clickedButton(desc, 4, primaryStage, scene3, bot4, criteria, action));
+        //bot5.setOnAction(e -> Controller.clickedButton(desc, 5, primaryStage, scene3, bot5, criteria, action));
+        //bot6.setOnAction(e -> Controller.clickedButton(desc, 6, primaryStage, scene3, bot6, criteria, action));
 
 
         //yourship.setOnAction(e -> Controller.clickedStore(desc));
@@ -160,7 +160,7 @@ public class javaFXSetup extends Application {
 
         Pane storelayout = new Pane();
 
-        storelayout.getChildren().addAll(desc, criteria, returnButton, pinksuit, revclothing, dress, makeup, missing, timer);
+        storelayout.getChildren().addAll(desc, criteria, returnButton, pinksuit, revclothing, dress, makeup, missing, action);
         Scene storePage= new Scene(storelayout,1200,800);
         storelayout.setId("s3");
 
