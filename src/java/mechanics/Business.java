@@ -145,7 +145,20 @@ public class Business {
 
     public void viewBusiness()
     {
-
+        String levelreport = "Business Level: " + this.getLevel();
+        String businessfundsreport = "Business Funds: " + this.businessFunds;
+        String ratioreport = "Female Employee Ratio: " + this.getRatio();
+        String employeeinfo = "";
+        for(Employee e: employees)
+        {
+            employeeinfo += "" + e.getName()
+                    + "Description: " + e.getDesc()
+                        + "Age: " + e.getAge()
+                            + "Gender" + e.getGender()
+                                + "Satisfaction: " + e.getSatisfaction()
+                                    + "Salary: " + e.getSalary()
+                                        + "Work Points: " + e.getWorkPoints();
+        }
     }
 
 
