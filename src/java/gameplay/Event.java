@@ -51,8 +51,6 @@ public class Event {
         return(e.chance > prob);
     }
 
-<<<<<<< HEAD
-=======
     /**
      * the event triggered, now have it affect the player
      * @param player the player effected
@@ -98,7 +96,6 @@ public class Event {
     work harder, in turn making you more successful */
     // lack of effort from employees ... resulting in ?
     // upgrading business or house if respect & business level is high enough
->>>>>>> ced97a8b270267af990dd87db2557c479d90deb0
 
 
 }

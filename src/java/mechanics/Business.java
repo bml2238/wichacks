@@ -95,15 +95,13 @@ public class Business {
         exp += 200;
     }
 
-<<<<<<< HEAD
     public void changeBusinessFunds(int amount){
         this.businessFunds += amount;
     }
 
     public void lvlup()
-=======
+
     public void getFunding(Player player)
->>>>>>> c0173e0639d01e50532a2aaf0c4e2479d4853d85
     {
         if(player.isConfidentEnough(70))
         {

@@ -27,13 +27,12 @@ public class Item {
         this.price = price;
     }
 
-<<<<<<< HEAD
 
-    public void setClothingStats(HashMap<String, Integer> clothing)
+    public void setClothingStats(HashMap<String, Integer> clothing){
     {
-=======
+
+    }
     public void setClothingStats(HashMap<String, Integer> clothing) {
->>>>>>> b9e605032011235300334a86b985fbc7264e2794
 
     }
 

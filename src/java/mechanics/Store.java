@@ -1,11 +1,8 @@
 package mechanics;
 
-<<<<<<< HEAD
 import java.util.HashMap;
 import java.util.HashSet;
-=======
 import java.util.ArrayList;
->>>>>>> b9e605032011235300334a86b985fbc7264e2794
 
 public class Store {
     private Player player;
@@ -57,15 +54,15 @@ public class Store {
         business.changeBusinessFunds(-item.price);
     }
 
-    public void upgradeHouse(){
-        Item house = null;
-        int selfEsteem = player.changeSelfEsteem(house.selfEffect);
-        if (player.getRespect() % business.getLevel() == 0){
-            house.setHouseStats("house", player.changeSelfEsteem(house.selfEffect * 5),
-                    player.changeRespect(house.repEffect * 2));
-
-        }
-
-    }
+//    public void upgradeHouse(){
+//        Item house = null;
+//        int selfEsteem = player.changeSelfEsteem(house.selfEffect);
+//        if (player.getRespect() % business.getLevel() == 0){
+//            house.setHouseStats("house", player.changeSelfEsteem(house.selfEffect * 5),
+//                    player.changeRespect(house.repEffect * 2));
+//
+//        }
+//
+//    }
 
 }
