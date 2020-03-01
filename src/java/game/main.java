@@ -13,6 +13,7 @@ import java.util.Scanner;
 
 /**the main class to run the game*/
 public class main {
+    public static Scanner scan;
     public static void main(String[] args) {
         /** Mechanics */
         Item item = new Item();
@@ -25,7 +26,7 @@ public class main {
         int year = 2000;
         int yearInc = 5;
         String month;
-        Scanner scan = new Scanner(System.in);
+        scan = new Scanner(System.in);
         System.out.print("What is your name? ");
 
         String name = scan.nextLine();
@@ -91,6 +92,7 @@ public class main {
 
             System.out.println("What do you want to do? (Shop, Meet with Investor): ");
             String action = scan.nextLine();
+            //checkAction(action)
 
             if (action.toLowerCase().equals("shop")){
                 store.goShopping();
@@ -122,4 +124,24 @@ public class main {
 
 
     }
+public void checkAction(String action)
+ {   if(action.equals("Business"))
+ {
+ System.out.println("View Business \n Work Month \n View Employees \n Hire Employees \nGo for Business Deal");
+ if(scan.nextLine().equals("View Business"))
+ {}
+ if(scan.nextLine().equals("Work Month"))
+ {}
+ if(scan.nextLine().equals("View Employees"))
+ {}
+ if(scan.nextLine().equals("Hire Employees"))
+ {}
+ if(scan.nextLine().equals("Go for Business Deal"))
+ {}
+
+
+ }
+
+ }
+
 }
