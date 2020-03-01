@@ -31,17 +31,13 @@ public class Business {
     }
 
     public void buildAllPossibleEmployees() throws FileNotFoundException {
-        int employeelimit = 3 + (level/2);
-        for(int employeeshere = 0; employeeshere < employeelimit; employeeshere++)
-        {
-
             if(level > 3)
             {
                 this.takenames = new Scanner(new File("data/employeeslvl5.txt"));
             }
             else
             {
-                this.takenames = new Scanner(new File("data/employeeslvl5.txt"));
+                this.takenames = new Scanner(new File("data/employeeslvl1.txt"));
             }
 
             while(takenames.hasNextLine()) {
@@ -57,7 +53,6 @@ public class Business {
                     allpossible.add(e);
                 }
             }
-        }
     }
 
     public void payEmployee()
@@ -84,6 +79,14 @@ public class Business {
         calculateRatio();
     }
 
+    public void lookAtHires()
+    {
+        int employeelimit = 3 + (level/2);
+        for(int employeeshere = 0; employeeshere < employeelimit; employeeshere++) {
+            allpossible.get((int) (Math.random() * ((allpossible.size()-0) + 1)));
+        }
+    }
+
     public void fireEmployee(Employee emp)
     {
         employees.remove(emp);
@@ -105,7 +108,7 @@ public class Business {
     {
         if(player.isConfidentEnough(70))
         {
-            businessFunds += 1000;
+            businessFunds += 2000*level;
             exp += 500;
         }
     }
