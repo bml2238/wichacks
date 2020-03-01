@@ -1,3 +1,28 @@
-public Employee(String name, int salary, String desc, int rating, int workpoints)
-Mary Jane, 30,
-John Doe,
+Mary Jane-female
+John Doe-male
+Daphne Lilac-female
+Mark Table-male
+Jane Comp-female
+Guy Song-male
+Alexis Barn-female
+Alex Lee-male
+Jill Valentine-female
+Chris Redfield-male
+Sheva Motor-female
+Peter Quill-male
+Scarlet Witch-female
+Captain America-male
+Scarlet Jones-female
+Tony Stark-male
+Jane Grey-female
+Clark Kent-male
+.
+A young college grad is eagerly looking for a new job
+A young college grad who seems very proud of their accomplishments
+A young self taught person who is eagerly looking for a new job
+A young self taught person who seems very proud of their accomplishments
+A young person looking into a new industry
+A young person who was previously fired
+A young person looking for a new company
+A young person who is eagerly looking for a new job
+.

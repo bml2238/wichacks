@@ -32,7 +32,8 @@ public class Item {
 
     public void setClothingStats(HashMap<String, Object> clothing)
     {
-        clothing.push("Dress", Item);
+        clothing.push("Dress", Item(0,0,0));
+        clothing.push("Skin Tight Pink Body Suit", Item(100, 100, 29.99))
     }
 
     public void setMakeupStats(HashMap<String, Object> makeup)
@@ -52,6 +53,10 @@ public class Item {
 
     public void setHouseStats(HashMap<String, Object> house)
     {
-
+        house.push("Studio", Item(0, 0, Math.random() * 1000 + 600));
+        house.push("Apartment", Items(0, 0, Math.random() * 1200 + 850));
+        house.push("Condo", Items(0, 0, Math.random() * 250000 + 100000 ))
+        house.push("House" Item(0, 0, Math.random() * 500000 + 200000));
+        house.push("Mansion", Item(100, 100, 1000000000);)
     }
 }
