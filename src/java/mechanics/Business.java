@@ -63,13 +63,14 @@ public class Business {
         }
     }
 
-    public void workEmployees()
+    public void workEmployees(Player player)
     {
         for(Employee e: employees)
         {
             businessFunds += e.getSatisfaction() * e.getWorkPoints();
             exp += 10;
         }
+        player.changeMoney((int)(businessFunds*0.03));
     }
 
     public void hireEmployee(Employee emp)
@@ -95,12 +96,14 @@ public class Business {
 
     public void advertise()
     {
+        businessFunds-=200;
         exp += 200;
     }
 
     public void changeBusinessFunds(int amount){
         this.businessFunds += amount;
     }
+
     public void getFunding(Player player)
     {
         if(player.isConfidentEnough(70))
