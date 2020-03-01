@@ -14,10 +14,19 @@ public class Business {
     private double genderratio;
     private ArrayList<Employee> employees;
     private ArrayList<Employee> allpossible;
+    private Type type;
 
-    public Business()
+    public Business(Business.Type type)
     {
         this.employees = new ArrayList<>();
+        this.type = type;
+    }
+
+    public enum Type
+    {
+        TECHNOLOGY,
+        ARTIST,
+        POLITICIAN
     }
 
     public enum action
@@ -63,13 +72,14 @@ public class Business {
         }
     }
 
-    public void workEmployees()
+    public void workEmployees(Player player)
     {
         for(Employee e: employees)
         {
             businessFunds += e.getSatisfaction() * e.getWorkPoints();
             exp += 10;
         }
+        player.changeMoney((int)(businessFunds*0.03));
     }
 
     public void hireEmployee(Employee emp)
@@ -95,12 +105,14 @@ public class Business {
 
     public void advertise()
     {
+        businessFunds-=200;
         exp += 200;
     }
 
     public void changeBusinessFunds(int amount){
         this.businessFunds += amount;
     }
+
     public void getFunding(Player player)
     {
         if(player.isConfidentEnough(70))
@@ -143,7 +155,7 @@ public class Business {
         return genderratio;
     }
 
-    public void viewBusiness()
+    public ArrayList<String> viewBusiness()
     {
         String levelreport = "Business Level: " + this.getLevel();
         String businessfundsreport = "Business Funds: " + this.businessFunds;
@@ -159,6 +171,13 @@ public class Business {
                                     + "Salary: " + e.getSalary()
                                         + "Work Points: " + e.getWorkPoints();
         }
+        ArrayList<String> stats = new ArrayList<>();
+        stats.add(levelreport);
+        stats.add(businessfundsreport);
+        stats.add(ratioreport);
+        stats.add(employeeinfo);
+
+        return stats;
     }
 
 

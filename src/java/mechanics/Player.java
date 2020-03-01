@@ -15,6 +15,9 @@ public class Player{
     private double money;
     private Business business;
     private ArrayList<String> inventory;
+    private ArrayList<String> consumables;
+    private String property;
+
 
     /** categories */
 /*    public enum Race {WHITE, BLACK, ASIAN, HISPANIC}
@@ -33,6 +36,8 @@ public class Player{
         this.respect = 50;
         this.selfEsteem = 50;
         this.inventory = null;
+        this.consumables = null;
+        this.property = "Studio"
     }
 
     public Player(String n, double income, double money) {
@@ -43,6 +48,9 @@ public class Player{
         this.respect = 50;
         this.selfEsteem = 50;
         this.inventory = null;
+        this.consumables = null;
+        this.property = "Studio"
+        this.business = new Business();
     }
 
     /** getters */
@@ -53,6 +61,9 @@ public class Player{
     public double getAge() { return this.age; }
     public String getName() { return this.name; }
     public ArrayList<String> getInventory() { return this.inventory; }
+    public ArrayList<String> getConsumables() { return this.consumables; }
+    public String getProperty() { return this.property; }
+    public Business getBusiness() { return this.business; }
 
     public void age() { this.age++; }
 
@@ -62,10 +73,10 @@ public class Player{
     /** changes reputation +/- amount */
     public void changeRespect(int amount) { this.respect += amount; }
 
-    public void changeMoney(int amount) {
-        this.money += amount;
-    }
+    /** changes money +/- amount */
+    public void changeMoney(int amount) { this.money += amount; }
 
+    /** changes reputation +/- amount */
     private void changeReputation(int amount) { this.respect += amount; }
 
     /** raises/lowers player income by percent */
@@ -79,4 +90,10 @@ public class Player{
     public void addItem(String item) {
         inventory.add(item);
     }
+
+    /** adds consumable item to consumables */
+    public void addConsumable(String consumable) { consumables.add(consumable); }
+
+    /** changes property of Player */
+    public void changeProperty(String property) { this.property = property; }
 }
