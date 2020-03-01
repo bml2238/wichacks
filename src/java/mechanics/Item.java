@@ -46,8 +46,7 @@ public class Item {
 
     public void setMenstrualProductsStats(HashMap<String, Object> menstrualProducts)
     {
-        menstrualProducts.put("Tampon", new Item(0, 0, 10)); //will run out after 3 months of use
-        menstrualProducts.put("Mentrual Pads", new Item(-1, -1, 5)); //will run out after 3 months of use
+        menstrualProducts.put("Menstrual Products", new Item(0, 0, 10)); //will run out after 3 months of use
     }
 
     public void setHouseStats(HashMap<String, Object> house)
