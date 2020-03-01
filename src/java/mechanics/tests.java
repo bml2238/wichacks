@@ -20,7 +20,8 @@ public class tests {
 
         Employee joe = new Employee("Joe", "male", "nothing", 2);
         business.hireEmployee(joe);
-        System.out.println(ba.fireEmployee(woman, joe));
+
+        System.out.println(ba.runBusiness(woman));
 
     }
 }

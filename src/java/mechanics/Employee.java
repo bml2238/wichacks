@@ -51,9 +51,7 @@ public class Employee {
         return this.desc;
     }
 
-    public int getAge()
-    { return this.age;
-    }
+    public int getAge() { return this.age; }
 
     public int getSalary()
     {
