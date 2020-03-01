@@ -1,4 +1,5 @@
 package mechanics;
+import java.util.Array.List;
 
 /**
  * Player class, with all stats and methods to edit stats
@@ -13,6 +14,7 @@ public class Player{
     private int respect; //0-100
     private double money;
     private Business business;
+    private ArrayList<String> inventory;
 
     /** categories */
 /*    public enum Race {WHITE, BLACK, ASIAN, HISPANIC}
@@ -30,6 +32,7 @@ public class Player{
         this.age = 21;
         this.respect = 50;
         this.selfEsteem = 50;
+        this.inventory
     }
 
     public Player(String n, double income, double money) {
@@ -39,6 +42,7 @@ public class Player{
         this.age = 21;
         this.respect = 50;
         this.selfEsteem = 50;
+        this.inventory
     }
 
     /** getters */
@@ -48,6 +52,7 @@ public class Player{
     public double getMoney() { return this.money; }
     public double getAge() { return this.age; }
     public String getName() { return this.name; }
+    public ArrayList<String> getInventory() { return this.inventoy; }
 
     public void age() { this.age++; }
 
@@ -79,4 +84,9 @@ public class Player{
         return respect > level;
     }
 
+    /** adds Item to the player's inventory */
+    public void addItem(String item)
+    {
+        inventory.add(item);
+    }
 }
