@@ -11,7 +11,8 @@ public class Game {
 
     public Game() {}
 
-    public String displayStats(Player p) {
+    public String displayPlayerStats(Player p) {
+        singleMessage = "";
         singleMessage += "Your name is " + p.getName() + " and you are " + p.getAge() + " years old.\n" +
                          "You make $" + p.getIncome() + " a month and have $" + p.getMoney() + " in the bank.\n";
 
@@ -30,6 +31,15 @@ public class Game {
             singleMessage += "You feel fine about yourself.\n";
         else
             singleMessage += "You are very confident. This may get you places, or it may intimidate others.\n";
+
+        return singleMessage;
+    }
+
+    public String displayBusinessStats(Player p) {
+        singleMessage = "";
+        ArrayList<String> stats = p.getBusiness().viewBusiness();
+        for(String stat : stats)
+            System.out.println(stat);
 
         return singleMessage;
     }

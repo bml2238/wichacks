@@ -143,7 +143,7 @@ public class Business {
         return genderratio;
     }
 
-    public void viewBusiness()
+    public ArrayList<String> viewBusiness()
     {
         String levelreport = "Business Level: " + this.getLevel();
         String businessfundsreport = "Business Funds: " + this.businessFunds;
@@ -159,6 +159,13 @@ public class Business {
                                     + "Salary: " + e.getSalary()
                                         + "Work Points: " + e.getWorkPoints();
         }
+        ArrayList<String> stats = new ArrayList<>();
+        stats.add(levelreport);
+        stats.add(businessfundsreport);
+        stats.add(ratioreport);
+        stats.add(employeeinfo);
+
+        return stats;
     }
 
 

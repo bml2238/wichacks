@@ -43,6 +43,7 @@ public class Player{
         this.respect = 50;
         this.selfEsteem = 50;
         this.inventory = null;
+        this.business = new Business();
     }
 
     /** getters */
@@ -53,6 +54,7 @@ public class Player{
     public double getAge() { return this.age; }
     public String getName() { return this.name; }
     public ArrayList<String> getInventory() { return this.inventory; }
+    public Business getBusiness() { return this.business; }
 
     public void age() { this.age++; }
 

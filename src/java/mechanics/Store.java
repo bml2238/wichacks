@@ -1,6 +1,5 @@
 package mechanics;
 
-import game.Item;
 
 import java.util.HashMap;
 import java.util.HashSet;
